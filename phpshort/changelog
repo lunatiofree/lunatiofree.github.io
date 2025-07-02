@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>phpShort - Changelog - Lunatio</title>
+
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <meta name="description" content="New features, improvements, and fixes to phpShort software.">
+
+    <!-- Scripts -->
+    <script src="../assets/js/app.js" defer></script>
+
+    <!-- Styles -->
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet preconnect">
+    <link href="../assets/css/app.css" rel="stylesheet">
+</head>
+
+<body class="antialiased flex flex-col min-h-full text-neutral-700 dark:text-neutral-300 bg-white dark:bg-black selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+<div class="w-full top-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-sm relative">
+    <div class="border-b border-neutral-900/5 dark:border-neutral-100/10">
+        <nav class="max-w-screen-lg	mx-auto p-4 flex flex-row flex-wrap">
+            <a class="flex items-center text-neutral-700 hover:text-black dark:text-neutral-200 dark:hover:text-white -m-4 p-4" href="../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" class="w-6 h-6"><path d="M70,36.52A33.48,33.48,0,1,1,36.52,70,33.52,33.52,0,0,1,70,36.52m0-15A48.48,48.48,0,1,0,118.48,70,48.47,48.47,0,0,0,70,21.52Z" style="fill:currentColor"/><path d="M77.94,110.21A87.61,87.61,0,0,0,87.6,70a87.61,87.61,0,0,0-9.66-40.21,41,41,0,0,1,0,80.42Z" style="fill:currentColor"/><path d="M91.69,44.51a33.45,33.45,0,0,1,0,51A95.91,95.91,0,0,0,95.1,70a95.91,95.91,0,0,0-3.41-25.49M70,21.52a50.6,50.6,0,0,0-5.8.35A80.43,80.43,0,0,1,80.1,70a80.43,80.43,0,0,1-15.9,48.13,50.6,50.6,0,0,0,5.8.35,48.48,48.48,0,0,0,0-97Z" style="fill:currentColor"/><path d="M118.49,26.71A65,65,0,1,0,135,70,64.87,64.87,0,0,0,118.49,26.71Z" style="fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:10px"/></svg>
+
+                <div class="ml-2 text-lg font-medium">Lunatio</div>
+            </a>
+
+            <button class="ml-auto lg:hidden transition cursor-pointer text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" data-trigger="menu" data-target="#primary-menu" aria-label="Primary menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="items-center ml-0 lg:ml-auto lg:flex basis-full lg:basis-auto flex hidden" id="primary-menu">
+                <ul class="flex flex-col lg:flex-row mt-6 lg:mt-0 lg:space-x-10 space-y-6 lg:space-y-0">
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../index.html" role="button">Products</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../services" role="button">Services</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 flex items-center transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../newsletter" role="button">Newsletter</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../contact" role="button">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="w-full sticky top-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-sm">
+    <div class="border-b border-neutral-900/5 dark:border-neutral-100/10">
+        <nav class="max-w-screen-lg	mx-auto p-4 flex flex-row flex-wrap">
+            <a href="../phpshort" class="text-lg font-bold text-neutral-700 hover:text-black dark:text-neutral-200 dark:hover:text-white -m-4 p-4">phpShort</a>
+
+            <button class="ml-auto lg:hidden transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" data-trigger="menu" data-target="#product-menu" aria-label="Product menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="items-center ml-0 lg:ml-auto lg:flex basis-full lg:basis-auto flex hidden" id="product-menu">
+                <ul class="flex flex-col lg:flex-row mt-6 lg:mt-0 lg:space-x-10 space-y-6 lg:space-y-0">
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../phpshort" role="button">Overview</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-black hover:text-black dark:text-white dark:hover:text-white" href="changelog" role="button">Changelog</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="documentation" role="button">Documentation</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-violet-500 hover:text-violet-600 dark:text-violet-400 dark:hover:text-violet-300" href="https://phpshort.lunatio.de" target="_blank" rel="nofollow" role="button">
+                            Demo
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-violet-500 hover:text-violet-600 dark:text-violet-400 dark:hover:text-violet-300" href="https://1.envato.market/phpshort-regular" target="_blank" rel="nofollow" role="button">
+                            Buy
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="flex flex-col flex-auto">
+    <div class="max-w-screen-lg w-full px-4 py-16 flex-auto mx-auto">
+        <h1 class="text-3xl sm:text-4xl mb-12 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">Changelog</h1>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">49</span> <span class="text-neutral-500 dark:text-neutral-400">— 21 June 2025</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new payment gateway: Mollie (checkout using a credit card)</li>
+                <li class="mt-1">Fixed the default Timezone not being applied to Guest users</li>
+                <li class="mt-1">Fixed not being able to add more than 2 Targets when editing a Link</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">48</span> <span class="text-neutral-500 dark:text-neutral-400">— 27 May 2025</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Improved SEO for the Home page (sequential headings)</li>
+                <li class="mt-1">Fixed Stats being recorded one day in the past</li>
+                <li class="mt-1">Fixed the New Domain page not including the required CNAME address</li>
+                <li class="mt-1">Fixed Links API endpoint not returning the HTTPS protocol for main domain short URLs</li>
+                <li class="mt-1">Fixed the Link Stats Privacy not defaulting to the User's preference</li>
+                <li class="mt-1">Improved the UI for sidebar and context menu elements</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">47</span> <span class="text-neutral-500 dark:text-neutral-400">— 22 May 2025</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new payment gateway: Paddle (checkout using a credit card)</li>
+                <li class="mt-1">Added the ability to create free plans on Regular License</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">46</span> <span class="text-neutral-500 dark:text-neutral-400">— 11 May 2025</span>
+            </div>
+
+            <p class="bg-red-400/20 dark:bg-red-600/20 text-red-800 dark:text-red-400 rounded-sm px-4 py-3 mb-4 mt-4">
+                Version 46 brings Timezone support for Stats pages, which required a complete rework of the way we're storing the Stats, as a result, upgrading to this version will remove all previous Stats. This is a big step forward, as in the future it will also allow us to correlate different datasets, to provide more in-depth Stats, which wasn't possible with the old database structure.
+            </p>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added timezone support for all Stats pages</li>
+                <li class="mt-1">Added Active Period for expiring links</li>
+                <li class="mt-1">Added Sensitive Content warning option for links</li>
+                <li class="mt-1">Added Continents targeting for Links</li>
+                <li class="mt-1">Added Browsers targeting for Links</li>
+                <li class="mt-1">Added Device targeting for Links</li>
+                <li class="mt-1">Added CNAME DNS validation support when validating custom domains</li>
+                <li class="mt-1">Added Webhooks on Domain Store, and Delete events</li>
+                <li class="mt-1">Added the ability to filter Users by Plan in the Admin Panel</li>
+                <li class="mt-1">Improved the codebase (code refactoring)</li>
+                <li class="mt-1">Improved the API Documentation</li>
+                <li class="mt-1">Updated the Crawler's User-Agent to a newer version</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed filtering Payments by Plan not working</li>
+                <li class="mt-1">Fixed password validation for Stats pages not working</li>
+                <li class="mt-1">Fixed missing field value on the Link's Edit page for Global Domains</li>
+                <li class="mt-1">Fixed the Stats API endpoint not checking the Link ownership</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">45</span> <span class="text-neutral-500 dark:text-neutral-400">— 7 November 2024</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added Bulk Actions for Users, Pages, Links, Spaces, Domains, and Pixels</li>
+                <li class="mt-1">Added the ability to upload avatar images for Users</li>
+                <li class="mt-1">Added the ability to store user uploaded files using an S3 filesystem (Amazon S3, DigitalOcean Spaces, Backblaze B2, etc.)</li>
+                <li class="mt-1">Improved placeholder visibility on all inputs</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">44</span> <span class="text-neutral-500 dark:text-neutral-400">— 28 July 2024</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Improved confirmation pages for custom domain short links (no longer shows any branding)</li>
+                <li class="mt-1">Fixed shortening links as Guest not working while a captcha service is enabled</li>
+                <li class="mt-1">Fixed web resources not loading when redirecting a custom domain short link without HTTPS enabled</li>
+                <li class="mt-1">Fixed short links with X retargeting pixel not working</li>
+                <li class="mt-1">Fixed the PHP version requirement always showing as OK during the installation process</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">43</span> <span class="text-neutral-500 dark:text-neutral-400">— 24 July 2024</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added the ability for the Admin to translate Pages from the Admin Panel</li>
+                <li class="mt-1">Added the ability for the Admin to force HTTPS scheme on the website (enabled by default)</li>
+                <li class="mt-1">Added the ability for the Admin to disable the Contact form</li>
+                <li class="mt-1">Added the ability for the Admin to display Contact Email, Phone, and Address on the Contact page</li>
+                <li class="mt-1">Added the ability for the Admin to enable support for HTTP/2 requests for the Crawler (disabled by default)</li>
+                <li class="mt-1">Added support for special characters when exporting data in CSV format</li>
+                <li class="mt-1">Added custom design for 4xx and 5xx error pages</li>
+                <li class="mt-1">Improved the Webhooks for User events (added email verification date information to the payload)</li>
+                <li class="mt-1">Improved the Bank Transfer Reference ID number format (the number is now shorter and capitalized)</li>
+                <li class="mt-1">Improved the Features section on the Home page</li>
+                <li class="mt-1">Updated the versioning system to major versions only</li>
+                <li class="mt-1">Updated the Crawler's User-Agent to a newer version</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed links being appended UTM tags unintended</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">42</span> <span class="text-neutral-500 dark:text-neutral-400">— 7 January 2024</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new Authentication system: Google Account</li>
+                <li class="mt-1">Added new Authentication system: Microsoft Account</li>
+                <li class="mt-1">Added new Authentication system: Apple Account</li>
+                <li class="mt-1">Added new Captcha driver: hCaptcha</li>
+                <li class="mt-1">Added new Captcha driver: Turnstile</li>
+                <li class="mt-1">Added new social profile footer links: LinkedIn, Github, Discord, Reddit, Threads, TikTok, Tumblr, Pinterest</li>
+                <li class="mt-1">Added the ability for the Admin to Login as User</li>
+                <li class="mt-1">Improved the codebase (code refactoring)</li>
+                <li class="mt-1">Improved user's privacy when navigating on external links</li>
+                <li class="mt-1">Improved SEO (sequential headings, anchor descriptions, image descriptions)</li>
+                <li class="mt-1">Improved accessibility (footer elements now have descriptive text for screen readers)</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed the usage number on Account Plan page not being formatted</li>
+                <li class="mt-1">Fixed Guest links not having a (default) Domain</li>
+                <li class="mt-1">Fixed current date time references potentially not being the same across a page load</li>
+                <li class="mt-1">Fixed month February missing in certain date range stats selections</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">41</span> <span class="text-neutral-500 dark:text-neutral-400">— 15 January 2023</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Improved the UI for the Pricing Plans</li>
+                <li class="mt-1">Fixed the Visibility field being disabled when editing a Page from the Admin Panel</li>
+                <li class="mt-1">Fixed the Payments filter not including Cancelled payments when searching by Invoice ID</li>
+                <li class="mt-1">Fixed being able to shorten Links with Pixel IDs belonging to others</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">40</span> <span class="text-neutral-500 dark:text-neutral-400">— 30 December 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added basic stats for the Links created by Guest Users</li>
+                <li class="mt-1">Added the Plan features under the User Plan section</li>
+                <li class="mt-1">Added translation ability for the Announcements content</li>
+                <li class="mt-1">Improved the cron jobs system (updated command parameter to prevent file creation on some servers)</li>
+                <li class="mt-1">Improved the unique Link alias generator functionality (increases one character if the alias already exists)</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed being able to Export Links when Data Export feature was unavailable</li>
+                <li class="mt-1">Fixed several elements not being rendered correctly while on Dark Mode</li>
+                <li class="mt-1">Fixed several missing language strings</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">39</span> <span class="text-neutral-500 dark:text-neutral-400">— 2 October 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Improved accessibility for the link shortener</li>
+                <li class="mt-1">Improved the API key length (increased to 64 characters)</li>
+                <li class="mt-1">Fixed the Search functionality not working for Pages in Admin Panel</li>
+                <li class="mt-1">Fixed an issue with the Stats API endpoint when no resource ID was provided</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">38</span> <span class="text-neutral-500 dark:text-neutral-400">— 18 July 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Improved the cron jobs system (added ability to add unlimited tasks)</li>
+                <li class="mt-1">Fixed the copy link button not working</li>
+                <li class="mt-1">Fixed helper links in the Admin Panel Dashboard not working</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">37</span> <span class="text-neutral-500 dark:text-neutral-400">— 7 July 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Improved adding new custom Domains process: URL protocol is no longer required</li>
+                <li class="mt-1">Fixed an issue preventing shortening Deep Links when Google Safe Browsing was enabled</li>
+                <li class="mt-1">Fixed the Webhook fields not being saved in the Admin Panel</li>
+                <li class="mt-1">Fixed minimum requirements check during the Installation process not being updated</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">36</span> <span class="text-neutral-500 dark:text-neutral-400">— 25 June 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new payment gateway: Paystack (checkout using a credit card)</li>
+                <li class="mt-1">Added new payment gateway: Razorpay (checkout using a credit card)</li>
+                <li class="mt-1">Added new payment gateway: Crypto.com (checkout using a cryptocurrency)</li>
+                <li class="mt-1">Added Two-factor Authentication system</li>
+                <li class="mt-1">Added Webhooks on User Store, Update, and Delete events</li>
+                <li class="mt-1">Added the ability to add both light and dark mode logos</li>
+                <li class="mt-1">Added the ability to create coupons with unlimited quantity number</li>
+                <li class="mt-1">Added Bad Words filter for the Link Aliases</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed an issue that could cause Payments and Invoices to be duplicated</li>
+                <li class="mt-1">Fixed an issue that would immediately remove the User's plan features after cancellation</li>
+                <li class="mt-1">Fixed an issue preventing the Admin to regenerate the Cron jobs key</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">35</span> <span class="text-neutral-500 dark:text-neutral-400">— 20 April 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added the ability to customize the Crawler's User-Agent</li>
+                <li class="mt-1">Fixed the Bad Words filter not applying to Links created by Guests</li>
+                <li class="mt-1">Fixed the default Domains list not showing up in the Admin Panel</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">34</span> <span class="text-neutral-500 dark:text-neutral-400">— 14 April 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new filters on all table lists (column order, order direction, per page limits)</li>
+                <li class="mt-1">Added Proxy support for the external requests when creating a Link</li>
+                <li class="mt-1">Added the ability to set the Plan's position on the Pricing listings</li>
+                <li class="mt-1">Added the ability to set custom CSS code based on the color scheme</li>
+                <li class="mt-1">Improved the codebase (code refactoring)</li>
+                <li class="mt-1">Improved the CSV export functionality (it now includes the URL where the report was generated from)</li>
+                <li class="mt-1">Improved the table lists filters (improved flexibility)</li>
+                <li class="mt-1">Improved the API Documentation</li>
+                <li class="mt-1">Improved the translation strings</li>
+                <li class="mt-1">Improved the SEO capabilities side-wide by adding in-file head tags for all public pages</li>
+                <li class="mt-1">Improved the iconography</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed not being able to edit a User that was under a recurring subscription</li>
+                <li class="mt-1">Fixed links not being disabled when the User is suspended</li>
+                <li class="mt-1">Fixed the API Documentation URL path not pointing to the correct location</li>
+                <li class="mt-1">Fixed the Pixels URL path in Admin Panel not pointing to the correct location</li>
+                <li class="mt-1">Fixed being able to exceed the count limit of Pixels</li>
+                <li class="mt-1">Fixed Subscriptions not ending when being cancelled on Stripe and PayPal</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">33</span> <span class="text-neutral-500 dark:text-neutral-400">— 11 December 2021</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added contextual menus on all table lists</li>
+                <li class="mt-1">Added email notification on Admin declined payments</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed an issue with specific currencies that would prevent the Checkout from working</li>
+                <li class="mt-1">Fixed several listing issues on RTL mode</li>
+                <li class="mt-1">Fixed several missing language strings</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">32</span> <span class="text-neutral-500 dark:text-neutral-400">— 18 October 2021</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added the ability to remove the primary domain from the available domains</li>
+                <li class="mt-1">Added the ability to filter Links that are not under a specific Space</li>
+                <li class="mt-1">Improved the Links filter when filtering by Domains</li>
+                <li class="mt-1">Improved the Developers documentation</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">31</span> <span class="text-neutral-500 dark:text-neutral-400">— 17 October 2021</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Improved the Pixel tracking success rate by adding a slight delay to the redirect</li>
+                <li class="mt-1">Improved SEO (interstitial redirect pages are not indexed by search engines anymore)</li>
+                <li class="mt-1">Fixed the List Links API endpoint not working</li>
+                <li class="mt-1">Fixed the default domain not being used when creating a User from the Admin Panel</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">30</span> <span class="text-neutral-500 dark:text-neutral-400">— 27 September 2021</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added translation ability for the Page title and description</li>
+                <li class="mt-1">Fixed an issue preventing redeeming coupons</li>
+                <li class="mt-1">Fixed an issue preventing changing the user's plan when no ending date was defined</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">29</span> <span class="text-neutral-500 dark:text-neutral-400">— 15 September 2021</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added support for Google Safe Browsing when shortening links</li>
+                <li class="mt-1">Added email notification on successful Stripe, PayPal and Coinbase payments</li>
+                <li class="mt-1">Improved the UI & UX of the Log-in, Register, Password reset, Contact and Page pages</li>
+                <li class="mt-1">Fixed an issue that would display all tax rates on Checkout before the user would select his country</li>
+                <li class="mt-1">Fixed the advanced features not being validated when shortening multiple links</li>
+                <li class="mt-1">Fixed an issue that would prevent creating links with the Language targeting feature</li>
+                <li class="mt-1">Fixed the deep link user feature availability being ignored when editing a link</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">28</span> <span class="text-neutral-500 dark:text-neutral-400">— 11 September 2021</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Fixed an issue that was preventing creating new Links under specific Spaces or Pixels</li>
+                <li class="mt-1">Fixed an issue that was preventing users from creating new Pixels</li>
+                <li class="mt-1">Fixed not being able to update the Email Encryption option in the Admin Panel</li>
+                <li class="mt-1">Fixed an issue that was preventing accessing the API Documentation</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">27</span> <span class="text-neutral-500 dark:text-neutral-400">— 10 September 2021</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Fixed an issue preventing editing user created resources in the Admin Panel</li>
+                <li class="mt-1">Fixed an issue that was preventing users from creating new Spaces</li>
+                <li class="mt-1">Fixed an issue that was preventing users from editing Links</li>
+                <li class="mt-1">Fixed the Developers link missing from the footer</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">26</span> <span class="text-neutral-500 dark:text-neutral-400">— 9 September 2021</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new payment gateway: PayPal (checkout using a PayPal account)</li>
+                <li class="mt-1">Added new payment gateway: Coinbase (checkout using a cryptocurrency)</li>
+                <li class="mt-1">Added new payment gateway: Bank (checkout using a bank transfer)</li>
+                <li class="mt-1">Added Coupons in the Admin Panel</li>
+                <li class="mt-1">Added Tax Rates in the Admin Panel</li>
+                <li class="mt-1">Added Announcements in the Admin Panel</li>
+                <li class="mt-1">Added a new search filter (Pixels) for Links</li>
+                <li class="mt-1">Added a new search filter (Private) for Domains in Admin Panel</li>
+                <li class="mt-1">Improved the codebase (name convention refactoring)</li>
+                <li class="mt-1">Improved the Invoices (they are now immutable)</li>
+                <li class="mt-1">Improved the redirect process on Custom Domains index page</li>
+                <li class="mt-1">Improved the bad words filter (the match is now case-insensitive)</li>
+                <li class="mt-1">Improved ARIA controls</li>
+                <li class="mt-1">Improved the Installation process</li>
+                <li class="mt-1">Fixed the country redirect not working after the last release</li>
+                <li class="mt-1">Fixed not being able to create links when Pixels are disabled</li>
+                <li class="mt-1">Fixed an issue with passwords being trimmed when changed</li>
+                <li class="mt-1">Fixed users created via the Admin Panel not defaulting to the preferred custom domain</li>
+                <li class="mt-1">Fixed search filter Sort having inverted values for New and Old options in Admin Panel</li>
+                <li class="mt-1">Fixed search filter Performance resetting when navigating between pages in Admin Panel</li>
+                <li class="mt-1">Fixed search filter Space and Domain not being preserved when navigating between pages in Admin Panel</li>
+                <li class="mt-1">Fixed the Stats Privacy dropdown options having the opposite effect</li>
+                <li class="mt-1">Fixed the Rotation Targeting option not working when creating a new link</li>
+                <li class="mt-1">Fixed deleting a Global Domain that was set as default, not resetting the default global domain value </li>
+                <li class="mt-1">Fixed not being able to use a Custom Global Domain when the User did not had access to Custom Domains</li>
+                <li class="mt-1">Fixed several missing language strings</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">25</span> <span class="text-neutral-500 dark:text-neutral-400">— 24 March 2021</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new share option (Tumblr)</li>
+                <li class="mt-1">Added the ability to set a Global Domain as the default domain to shorten links</li>
+                <li class="mt-1">Improved the database structure (IDs are now unsigned)</li>
+                <li class="mt-1">Fixed the CTA cards on Dashboard not having the correct links</li>
+                <li class="mt-1">Fixed link ownership changing when updating a link as an Admin</li>
+                <li class="mt-1">Fixed the Stats API endpoint returning a success response even on missing resources</li>
+                <li class="mt-1">Fixed several missing language strings</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">24</span> <span class="text-neutral-500 dark:text-neutral-400">— 26 February 2021</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Fixed the Stats Privacy not working as expected when on Public or Private</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">23</span> <span class="text-neutral-500 dark:text-neutral-400">— 24 February 2021</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added support for the advanced features to the multiple link creator</li>
+                <li class="mt-1">Added Cronjob for automatic cache deletion</li>
+                <li class="mt-1">Fixed referrer not working as expected</li>
+                <li class="mt-1">Fixed the referrer not being passed along on redirects with Pixel consent enabled</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">22</span> <span class="text-neutral-500 dark:text-neutral-400">— 20 February 2021</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added Retargeting Pixels support</li>
+                <li class="mt-1">Added Language targeting for Links</li>
+                <li class="mt-1">Added date range selection for the Stats</li>
+                <li class="mt-1">Added Cities Stats</li>
+                <li class="mt-1">Added data export in CSV format both for Links and Stats (plan feature)</li>
+                <li class="mt-1">Added password option for the Stats pages</li>
+                <li class="mt-1">Added the ability to toggle password visibility for Links</li>
+                <li class="mt-1">Added automatic language switching when the language is available</li>
+                <li class="mt-1">Added user account status column for Users in Admin Panel</li>
+                <li class="mt-1">Added total per page stats for each stats category</li>
+                <li class="mt-1">Added total per table stats for each stats category</li>
+                <li class="mt-1">Added domain icons to the Domains listing</li>
+                <li class="mt-1">Added sizing utility classes to the entire iconography</li>
+                <li class="mt-1">Added PostCSS support</li>
+                <li class="mt-1">Improved the CSS filesize (removed all unused CSS rules)</li>
+                <li class="mt-1">Improved the User Dashboard (reworked the design)</li>
+                <li class="mt-1">Improved the Home page (reworked the design)</li>
+                <li class="mt-1">Improved the SEO for the Home page</li>
+                <li class="mt-1">Improved the checkout process (you can now cancel the coupon adding process)</li>
+                <li class="mt-1">Improved the API (added status code for the Links, Spaces and Domains listings)</li>
+                <li class="mt-1">Improved the password encryption method for Links</li>
+                <li class="mt-1">Updated the iconography</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed an issue when link titles would exceed 255 characters</li>
+                <li class="mt-1">Fixed the domain field not being validated on update</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">21</span> <span class="text-neutral-500 dark:text-neutral-400">— 10 November 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new browser icons</li>
+                <li class="mt-1">Added link password status to the Links API endpoint</li>
+                <li class="mt-1">Fixed an issue where you could shorten more links than allowed</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">20</span> <span class="text-neutral-500 dark:text-neutral-400">— 23 October 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Fixed an issue when saving a link with a Target option unavailable to the user</li>
+                <li class="mt-1">Fixed the tracking code section not being available on certain pages</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">19</span> <span class="text-neutral-500 dark:text-neutral-400">— 11 October 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Improved the Checkout & Registration process (the selected plan is now remembered)</li>
+                <li class="mt-1">Improved the UI & UX in various places</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed the Advanced button on shortener form not being styled on mobile devices</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">18</span> <span class="text-neutral-500 dark:text-neutral-400">— 2 October 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Fixed share buttons only working for the first result in a set</li>
+                <li class="mt-1">Fixed Edit button appearing on Stats pages for non-owners</li>
+                <li class="mt-1">Fixed the language selector not working on Custom Domains</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">17</span> <span class="text-neutral-500 dark:text-neutral-400">— 27 September 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added the ability to change the pagination results number in Admin Panel</li>
+                <li class="mt-1">Added new Registration and Login page backgrounds</li>
+                <li class="mt-1">Improved the way Links, Spaces, and Domains are counted in Admin Panel</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">16</span> <span class="text-neutral-500 dark:text-neutral-400">— 15 September 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added HTTPS protocol support for Custom Domains</li>
+                <li class="mt-1">Added full support for custom aliases for any keyword on Custom Domains</li>
+                <li class="mt-1">Fixed stats not being recorded for password protected Links</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">15</span> <span class="text-neutral-500 dark:text-neutral-400">— 5 September 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added email account confirmation requirement when updating the email</li>
+                <li class="mt-1">Added the ability to verify accounts from the Admin Panel</li>
+                <li class="mt-1">Added the ability to change user passwords from the Admin Panel</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">14</span> <span class="text-neutral-500 dark:text-neutral-400">— 31 August 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added Preview support for Password protected Links</li>
+                <li class="mt-1">Fixed custom index page having priority over Domain custom index pages</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">13</span> <span class="text-neutral-500 dark:text-neutral-400">— 25 August 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Reduced the CSS size</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">12</span> <span class="text-neutral-500 dark:text-neutral-400">— 22 August 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added DNS proxy support for local host when validating Custom Domains</li>
+                <li class="mt-1">Fixed link preview not working when removing all Targeting values</li>
+                <li class="mt-1">Fixed the Links counter not showing the proper value for Global Domains</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">11</span> <span class="text-neutral-500 dark:text-neutral-400">— 18 August 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new browser icons</li>
+                <li class="mt-1">Added new platform icons</li>
+                <li class="mt-1">Fixed invoices not having localized date format</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">10</span> <span class="text-neutral-500 dark:text-neutral-400">— 11 August 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added the ability to add custom CSS in the Admin Panel</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">9</span> <span class="text-neutral-500 dark:text-neutral-400">— 9 August 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added the ability to create Users from the Admin Panel</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Updated the favicons source</li>
+                <li class="mt-1">Fixed an issue when trying to save empty Space names</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">8</span> <span class="text-neutral-500 dark:text-neutral-400">— 29 July 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">7</span> <span class="text-neutral-500 dark:text-neutral-400">— 22 July 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added throttle to the Password Reset functionality</li>
+                <li class="mt-1">Fixed an issue which caused the installer not to work</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">6</span> <span class="text-neutral-500 dark:text-neutral-400">— 10 July 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added autofocus on the shorten URL input on the Home page</li>
+                <li class="mt-1">Improved the header section on the Home page</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">5</span> <span class="text-neutral-500 dark:text-neutral-400">— 1 July 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added a new API endpoint: Account</li>
+                <li class="mt-1">Added visual cues on link listings for disabled and expired links</li>
+                <li class="mt-1">Added a Disabled Status filter for Links search</li>
+                <li class="mt-1">Added support for aliases to use system reserved keywords for custom domains</li>
+                <li class="mt-1">Fixed the Active filter not excluding certain inactive link types</li>
+                <li class="mt-1">Fixed the Expired filter not showing certain expired links</li>
+                <li class="mt-1">Fixed an issue when emulating a Subscription (invalid variable)</li>
+                <li class="mt-1">Fixed an issue when creating or updating Plans (invalid field name)</li>
+                <li class="mt-1">Fixed date & time field validation not requiring each other</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">4</span> <span class="text-neutral-500 dark:text-neutral-400">— 21 June 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added support for Stripe Tax Rates</li>
+                <li class="mt-1">Added support for Stripe Coupons</li>
+                <li class="mt-1">Added API endpoint for Domains</li>
+                <li class="mt-1">Added API endpoint for Spaces</li>
+                <li class="mt-1">Added search & filtering capabilities to the listing API endpoints</li>
+                <li class="mt-1">Added validation errors in the API output</li>
+                <li class="mt-1">Added date and time localization support for Invoices</li>
+                <li class="mt-1">Improved URL parsing (requests now include a UA)</li>
+                <li class="mt-1">Improved the checkout process</li>
+                <li class="mt-1">Improved the way the total clicks count is being calculated</li>
+                <li class="mt-1">Improved the way emails are sent through the contact form</li>
+                <li class="mt-1">Improved the Installation process (database engine type is now dictated)</li>
+                <li class="mt-1">Improved the API Documentation</li>
+                <li class="mt-1">Fixed Link Preview page having wrong page title</li>
+                <li class="mt-1">Fixed an issue when adding a new Custom Domain without the URL protocol</li>
+                <li class="mt-1">Other minor improvements and fixes</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">3</span> <span class="text-neutral-500 dark:text-neutral-400">— 22 May 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added clicks Evolution category in the Stats page (with performance index)</li>
+                <li class="mt-1">Added custom deep link protocol support</li>
+                <li class="mt-1">Added link explanation in Link Preview</li>
+                <li class="mt-1">Added link preview in link dropdown menu</li>
+                <li class="mt-1">Added total clicks count for guest links</li>
+                <li class="mt-1">Added RTL support to email templates</li>
+                <li class="mt-1">Added support for special characters in aliases and urls</li>
+                <li class="mt-1">Added translation support for country names</li>
+                <li class="mt-1">Added date and time localization support for Link expiration date and Link statistics</li>
+                <li class="mt-1">Added the ability to set the default Domain, Space & Stats privacy when creating new links</li>
+                <li class="mt-1">Improved the domain name validation when adding a new custom domain</li>
+                <li class="mt-1">Improved the DNS validation process when adding a custom domain</li>
+                <li class="mt-1">Improved the QR code generator (added UTF-8 support)</li>
+                <li class="mt-1">Improved RTL support (fixed various inputs that were not supposed to be RTL)</li>
+                <li class="mt-1">Fixed several missing language strings</li>
+                <li class="mt-1">Fixed guest users being able to shorten urls with deep link protocols</li>
+                <li class="mt-1">Fixed being able to preview links that were password protected</li>
+                <li class="mt-1">Fixed timezone value not being set on user creation</li>
+                <li class="mt-1">Fixed search filter Sort having inverted values for New and Old options</li>
+                <li class="mt-1">Fixed user’s language selection not being remembered after account registration</li>
+                <li class="mt-1">Other minor fixes & improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">2</span> <span class="text-neutral-500 dark:text-neutral-400">— 7 May 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added Deep mobile/app linking (Plan option)</li>
+                <li class="mt-1">Added Link rotation (A/B testing)</li>
+                <li class="mt-1">Added Link Parameter Forwarding</li>
+                <li class="mt-1">Added Link expiration after X clicks</li>
+                <li class="mt-1">Additional Global Domains (Plan option)</li>
+                <li class="mt-1">Improved the Installation wizard (complete rework)</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Other minor fixes and improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">1</span> <span class="text-neutral-500 dark:text-neutral-400">— 29 April 2020</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Initial release</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="w-full border-t border-neutral-900/5 dark:border-neutral-100/10">
+        <div class="max-w-screen-lg mx-auto px-4">
+            <nav class="py-12">
+                <ul class="flex lg:space-x-10 lg:flex-row flex-col lg:space-y-0 space-y-6">
+                    <li>
+                        <a href="../index.html" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Products</a>
+                    </li>
+
+                    <li>
+                        <a href="../services" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Services</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../newsletter" role="button">Newsletter</a>
+                    </li>
+
+                    <li>
+                        <a href="../terms-of-service" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Terms of Service</a>
+                    </li>
+
+                    <li>
+                        <a href="../contact" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="text-neutral-500 mt-4">© 2025 Lunatio. All rights reserved.</div>
+            </nav>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

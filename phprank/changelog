@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>phpRank - Changelog - Lunatio</title>
+
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <meta name="description" content="New features, improvements, and fixes to phpRank software.">
+
+    <!-- Scripts -->
+    <script src="../assets/js/app.js" defer></script>
+
+    <!-- Styles -->
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet preconnect">
+    <link href="../assets/css/app.css" rel="stylesheet">
+</head>
+
+<body class="antialiased flex flex-col min-h-full text-neutral-700 dark:text-neutral-300 bg-white dark:bg-black selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+<div class="w-full top-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-sm relative">
+    <div class="border-b border-neutral-900/5 dark:border-neutral-100/10">
+        <nav class="max-w-screen-lg	mx-auto p-4 flex flex-row flex-wrap">
+            <a class="flex items-center text-neutral-700 hover:text-black dark:text-neutral-200 dark:hover:text-white -m-4 p-4" href="../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" class="w-6 h-6"><path d="M70,36.52A33.48,33.48,0,1,1,36.52,70,33.52,33.52,0,0,1,70,36.52m0-15A48.48,48.48,0,1,0,118.48,70,48.47,48.47,0,0,0,70,21.52Z" style="fill:currentColor"/><path d="M77.94,110.21A87.61,87.61,0,0,0,87.6,70a87.61,87.61,0,0,0-9.66-40.21,41,41,0,0,1,0,80.42Z" style="fill:currentColor"/><path d="M91.69,44.51a33.45,33.45,0,0,1,0,51A95.91,95.91,0,0,0,95.1,70a95.91,95.91,0,0,0-3.41-25.49M70,21.52a50.6,50.6,0,0,0-5.8.35A80.43,80.43,0,0,1,80.1,70a80.43,80.43,0,0,1-15.9,48.13,50.6,50.6,0,0,0,5.8.35,48.48,48.48,0,0,0,0-97Z" style="fill:currentColor"/><path d="M118.49,26.71A65,65,0,1,0,135,70,64.87,64.87,0,0,0,118.49,26.71Z" style="fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:10px"/></svg>
+
+                <div class="ml-2 text-lg font-medium">Lunatio</div>
+            </a>
+
+            <button class="ml-auto lg:hidden transition cursor-pointer text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" data-trigger="menu" data-target="#primary-menu" aria-label="Primary menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="items-center ml-0 lg:ml-auto lg:flex basis-full lg:basis-auto flex hidden" id="primary-menu">
+                <ul class="flex flex-col lg:flex-row mt-6 lg:mt-0 lg:space-x-10 space-y-6 lg:space-y-0">
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../index.html" role="button">Products</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../services" role="button">Services</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 flex items-center transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../newsletter" role="button">Newsletter</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../contact" role="button">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="w-full sticky top-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-sm">
+    <div class="border-b border-neutral-900/5 dark:border-neutral-100/10">
+        <nav class="max-w-screen-lg	mx-auto p-4 flex flex-row flex-wrap">
+            <a href="../phprank" class="text-lg font-bold text-neutral-700 hover:text-black dark:text-neutral-200 dark:hover:text-white -m-4 p-4">phpRank</a>
+
+            <button class="ml-auto lg:hidden transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" data-trigger="menu" data-target="#product-menu" aria-label="Product menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="items-center ml-0 lg:ml-auto lg:flex basis-full lg:basis-auto flex hidden" id="product-menu">
+                <ul class="flex flex-col lg:flex-row mt-6 lg:mt-0 lg:space-x-10 space-y-6 lg:space-y-0">
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../phprank" role="button">Overview</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-black hover:text-black dark:text-white dark:hover:text-white" href="changelog" role="button">Changelog</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="documentation" role="button">Documentation</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 " href="https://phprank.lunatio.de" target="_blank" rel="nofollow" role="button">
+                            Demo
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 " href="https://1.envato.market/phprank-regular" target="_blank" rel="nofollow" role="button">
+                            Buy
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="flex flex-col flex-auto">
+    <div class="max-w-screen-lg w-full px-4 py-16 flex-auto mx-auto">
+        <h1 class="text-3xl sm:text-4xl mb-12 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">Changelog</h1>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">17</span> <span class="text-neutral-500 dark:text-neutral-400">— 21 June 2025</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new payment gateway: Mollie (checkout using a credit card)</li>
+                <li class="mt-1">Fixed the default Timezone not being applied to Guest users</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">16</span> <span class="text-neutral-500 dark:text-neutral-400">— 22 May 2025</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new payment gateway: Paddle (checkout using a credit card)</li>
+                <li class="mt-1">Added the ability to create free plans on Regular License</li>
+                <li class="mt-1">Added the ability to filter Users by Plan in the Admin Panel</li>
+                <li class="mt-1">Improved the codebase (code refactoring)</li>
+                <li class="mt-1">Improved the API Documentation</li>
+                <li class="mt-1">Updated the Crawler's User-Agent to a newer version</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed filtering Payments by Plan not working</li>
+                <li class="mt-1">Fixed password validation for Stats pages not working</li>
+                <li class="mt-1">Improved the UI for sidebar and context menu elements</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">15</span> <span class="text-neutral-500 dark:text-neutral-400">— 9 November 2024</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added Bulk Actions for Users, Pages, Reports, and Projects</li>
+                <li class="mt-1">Added the ability to upload avatar images for Users</li>
+                <li class="mt-1">Added the ability to store user uploaded files using an S3 filesystem (Amazon S3, DigitalOcean Spaces, Backblaze B2, etc.)</li>
+                <li class="mt-1">Improved placeholder visibility on all inputs</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">14</span> <span class="text-neutral-500 dark:text-neutral-400">— 28 July 2024</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added the ability for the Admin to enable support for HTTP/2 requests for the Crawler (disabled by default)</li>
+                <li class="mt-1">Added support for special characters when exporting data in CSV format</li>
+                <li class="mt-1">Added custom design for 4xx and 5xx error pages</li>
+                <li class="mt-1">Updated the Crawler's User-Agent to a newer version</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed an issue preventing checking out using the Bank Transfer method</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">13</span> <span class="text-neutral-500 dark:text-neutral-400">— 17 May 2024</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Improved the Webhooks for User events (added email verification date information to the payload)</li>
+                <li class="mt-1">Improved the Bank Transfer Reference ID number format (the number is now shorter and capitalized)</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed an issue with the API based Tools appearing as available when being disabled</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">12</span> <span class="text-neutral-500 dark:text-neutral-400">— 20 February 2024</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new SEO report test: HTTP/2</li>
+                <li class="mt-1">Added new SEO report test: HTST</li>
+                <li class="mt-1">Added new SEO report test: DOCTYPE</li>
+                <li class="mt-1">Added new Tool: Uptime Calculator</li>
+                <li class="mt-1">Added new Tool: Meta Tags Checker</li>
+                <li class="mt-1">Added new Tool: HTTP Headers Checker</li>
+                <li class="mt-1">Added new Authentication system: Google Account</li>
+                <li class="mt-1">Added new Authentication system: Microsoft Account</li>
+                <li class="mt-1">Added new Authentication system: Apple Account</li>
+                <li class="mt-1">Added new Captcha driver: hCaptcha</li>
+                <li class="mt-1">Added new Captcha driver: Turnstile</li>
+                <li class="mt-1">Added new social profile footer links: LinkedIn, Github, Discord, Reddit, Threads, TikTok, Tumblr, Pinterest</li>
+                <li class="mt-1">Added the ability for the Admin to Login as User</li>
+                <li class="mt-1">Added the ability for the Admin to enable limited Reports for Guest Users</li>
+                <li class="mt-1">Added the ability for the Admin to translate Pages from the Admin Panel</li>
+                <li class="mt-1">Added the ability for the Admin to force HTTPS scheme on the website (enabled by default)</li>
+                <li class="mt-1">Added the ability for the Admin to disable the Contact form</li>
+                <li class="mt-1">Added the ability for the Admin to display Contact Email, Phone, and Address on the Contact page</li>
+                <li class="mt-1">Added User's Preferences to the Account API endpoint</li>
+                <li class="mt-1">Added Category filters to Tools section</li>
+                <li class="mt-1">Added a short description to every Tool</li>
+                <li class="mt-1">Improved the codebase (code refactoring)</li>
+                <li class="mt-1">Improved user's privacy when navigating on external links</li>
+                <li class="mt-1">Improved SEO (sequential headings, anchor descriptions, image descriptions)</li>
+                <li class="mt-1">Improved accessibility (footer elements now have descriptive text for screen readers)</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Updated the versioning system to major versions only</li>
+                <li class="mt-1">Fixed the UTM Builder Tool result generating incorrect parameter names</li>
+                <li class="mt-1">Fixed the WHOIS Lookup Tool not having Captcha protection</li>
+                <li class="mt-1">Fixed the usage number on Account Plan page not being formatted</li>
+                <li class="mt-1">Fixed current date time references potentially not being the same across a page load</li>
+                <li class="mt-1">Fixed the Reports not being deleted when a User is deleted</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">11</span> <span class="text-neutral-500 dark:text-neutral-400">— 15 January 2023</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Improved the UI for the Pricing Plans</li>
+                <li class="mt-1">Fixed the UTM Builder Tool requiring all fields to be present when generating an URL</li>
+                <li class="mt-1">Fixed the non white-label reports having wrong URL value when printing or saving the reports</li>
+                <li class="mt-1">Fixed the Visibility field being disabled when editing a Page from the Admin Panel</li>
+                <li class="mt-1">Fixed the Payments filter not including Cancelled payments when searching by Invoice ID</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">10</span> <span class="text-neutral-500 dark:text-neutral-400">— 29 December 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new Plan feature: Branded Reports</li>
+                <li class="mt-1">Added new Plan feature: White-label Reports</li>
+                <li class="mt-1">Added new Plan feature: Tools</li>
+                <li class="mt-1">Added new Plan feature: Data Export</li>
+                <li class="mt-1">Added new Plan feature: API</li>
+                <li class="mt-1">Added the Plan features under the User Plan section</li>
+                <li class="mt-1">Added translation ability for the Announcements content</li>
+                <li class="mt-1">Improved the Reports Export functionality (added the ID column to the exported data)</li>
+                <li class="mt-1">Improved the Cron Job command (added additional parameter to prevent file creation on some servers)</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed several elements not being rendered correctly while on Dark Mode</li>
+                <li class="mt-1">Fixed the Copy button for the Lorem Ipsum Generator Tool not working</li>
+                <li class="mt-1">Fixed an issue when submitting empty data to the HTML, JS and CSS minifier Tools</li>
+                <li class="mt-1">Fixed an issue preventing pages from being fetched when a BOM character was present</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">9</span> <span class="text-neutral-500 dark:text-neutral-400">— 10 October 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added Tools feature section on the Home page</li>
+                <li class="mt-1">Added Search functionality to the Tools section</li>
+                <li class="mt-1">Added the ability to enable the Tools to be used by Guest users</li>
+                <li class="mt-1">Added new Tool: Domain IP Lookup</li>
+                <li class="mt-1">Added new Tool: Reverse IP Lookup</li>
+                <li class="mt-1">Added new Tool: Redirect Checker</li>
+                <li class="mt-1">Added new Tool: IDN Converter</li>
+                <li class="mt-1">Added new Tool: UTM Builder</li>
+                <li class="mt-1">Added new Tool: JSON Validator</li>
+                <li class="mt-1">Added new Tool: Binary Converter</li>
+                <li class="mt-1">Added new Tool: Text Replacer</li>
+                <li class="mt-1">Added new Tool: Number Generator</li>
+                <li class="mt-1">Improved accessibility on SEO reports (passed tests are now marked with a checkmark)</li>
+                <li class="mt-1">Improved the Tag Remover Tool (now Text cleaner): added spaces and line breaks cleaners</li>
+                <li class="mt-1">Improved the API key length (increased to 64 characters)</li>
+                <li class="mt-1">Fixed parsing image links when fetching sitemaps</li>
+                <li class="mt-1">Fixed the Search functionality not working for Pages in Admin Panel</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">8</span> <span class="text-neutral-500 dark:text-neutral-400">— 18 July 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new Tool: Word Density Counter</li>
+                <li class="mt-1">Added new Tool: Tag Remover</li>
+                <li class="mt-1">Added new Tool: Text Reverser</li>
+                <li class="mt-1">Improved the cron jobs system (added ability to add unlimited tasks)</li>
+                <li class="mt-1">Fixed helper links in the Admin Panel Dashboard not working</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">7</span> <span class="text-neutral-500 dark:text-neutral-400">— 7 July 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Fixed the Copy button from SERP Checker Tool not working</li>
+                <li class="mt-1">Fixed the Webhook fields not being saved in the Admin Panel</li>
+                <li class="mt-1">Fixed minimum requirements check during the Installation process not being updated</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">6</span> <span class="text-neutral-500 dark:text-neutral-400">— 24 June 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new payment gateway: Paystack (checkout using a credit card)</li>
+                <li class="mt-1">Added new payment gateway: Razorpay (checkout using a credit card)</li>
+                <li class="mt-1">Added new payment gateway: Crypto.com (checkout using a cryptocurrency)</li>
+                <li class="mt-1">Added new SEO report test: Server Signature</li>
+                <li class="mt-1">Added new SEO report test: Mixed Content</li>
+                <li class="mt-1">Added new SEO report test: Unsafe Cross-Origin Links</li>
+                <li class="mt-1">Added new Tool: Color Converter</li>
+                <li class="mt-1">Added new Tool: URL Parser</li>
+                <li class="mt-1">Added new Tool: UUID Generator</li>
+                <li class="mt-1">Added Two-factor Authentication system</li>
+                <li class="mt-1">Added Webhooks on User Store, Update, and Delete events</li>
+                <li class="mt-1">Added the ability to add both light and dark mode logos</li>
+                <li class="mt-1">Added the ability to create coupons with unlimited quantity number</li>
+                <li class="mt-1">Improved the HTTP Requests SEO report test: video and audio requests are now included</li>
+                <li class="mt-1">Improved the dark mode</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed an issue that could cause Payments and Invoices to be duplicated</li>
+                <li class="mt-1">Fixed an issue that would immediately remove the User's plan features after cancellation</li>
+                <li class="mt-1">Fixed an issue preventing the Admin to regenerate the Cron jobs key</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">5</span> <span class="text-neutral-500 dark:text-neutral-400">— 21 April 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new Tool: Keyword Research</li>
+                <li class="mt-1">Added the ability to fetch sitemap links that are not necessarily ending with XML format</li>
+                <li class="mt-1">Added the ability to enable detailed Reports on Export or Print</li>
+                <li class="mt-1">Added the ability to set the Plan's position on the Pricing listings</li>
+                <li class="mt-1">Added the ability to set custom CSS code based on the color scheme</li>
+                <li class="mt-1">Added the ability to customize the Crawler's User-Agent</li>
+                <li class="mt-1">Fixed Admin User filtration for Payments and Reports not working</li>
+                <li class="mt-1">Fixed the Plans not ending when being cancelled on Stripe and PayPal</li>
+                <li class="mt-1">Fixed external requests timeout limit not working as expected</li>
+                <li class="mt-1">Fixed an issue causing external resources to be linked as an internal resources in SEO reports</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">4</span> <span class="text-neutral-500 dark:text-neutral-400">— 4 March 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added Sitemap Crawling capability</li>
+                <li class="mt-1">Added Proxy support for the external requests of Reports and Tools</li>
+                <li class="mt-1">Added new Tool: HTML Minifier</li>
+                <li class="mt-1">Added new Tool: CSS Minifier</li>
+                <li class="mt-1">Added new Tool: JS Minifier</li>
+                <li class="mt-1">Added the ability to set the default country for SERP and Indexed Pages checkers</li>
+                <li class="mt-1">Improved the Title Tag test (checks against multiple title tags)</li>
+                <li class="mt-1">Improved the SEO Friendly URL test (keywords are now in string matched)</li>
+                <li class="mt-1">Improved the iconography</li>
+                <li class="mt-1">Improved the color scheme</li>
+                <li class="mt-1">Updated all the dependencies to their latest versions</li>
+                <li class="mt-1">Fixed the Clean Cronjob not being logged</li>
+                <li class="mt-1">Fixed the Word Counter Tool not ignoring punctuation</li>
+                <li class="mt-1">Fixed the Base64 Converter Tool not working due to wrong route settings</li>
+                <li class="mt-1">Fixed an issue that would prevent generating reports when image names would contain certain characters</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">3</span> <span class="text-neutral-500 dark:text-neutral-400">— 1 February 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new Tool: SERP Checker</li>
+                <li class="mt-1">Added new Tool: Indexed Pages Checker</li>
+                <li class="mt-1">Added new Tool: Keyword Generator</li>
+                <li class="mt-1">Added new Tool: Website Status Checker</li>
+                <li class="mt-1">Added new Tool: SSL Checker</li>
+                <li class="mt-1">Added new Tool: WHOIS Lookup</li>
+                <li class="mt-1">Added new Tool: DNS Lookup</li>
+                <li class="mt-1">Added new Tool: User-Agent Parser</li>
+                <li class="mt-1">Improved the SEO by setting proper headings for each page</li>
+                <li class="mt-1">Fixed the Reports API endpoint results not including the result score</li>
+                <li class="mt-1">Fixed the Password generator copy button not working</li>
+                <li class="mt-1">Fixed the Lorem Ipsum generator copy button not working</li>
+                <li class="mt-1">Fixed not being able to enable Screenshots from the Admin Panel</li>
+                <li class="mt-1">Fixed the Tool Ads not applying the Ad codes on the Tool's page</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">2</span> <span class="text-neutral-500 dark:text-neutral-400">— 18 January 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added Ads section in the Admin Panel</li>
+                <li class="mt-1">Added Projects section</li>
+                <li class="mt-1">Added Tools section</li>
+                <li class="mt-1">Added QR Generator Tool</li>
+                <li class="mt-1">Added Password Generator Tool</li>
+                <li class="mt-1">Added URL Converter Tool</li>
+                <li class="mt-1">Added Base64 Converter Tool</li>
+                <li class="mt-1">Added What is my Browser Tool</li>
+                <li class="mt-1">Added What is my IP Tool</li>
+                <li class="mt-1">Added IP Lookup Tool</li>
+                <li class="mt-1">Added MD5 Generator Tool</li>
+                <li class="mt-1">Added Lorem Ipsum Generator Tool</li>
+                <li class="mt-1">Added Word Counter Tool</li>
+                <li class="mt-1">Added Case Converter Tool</li>
+                <li class="mt-1">Added Text to Slug Tool</li>
+                <li class="mt-1">Added the ability to set a custom brand when printing or saving Reports</li>
+                <li class="mt-1">Added the ability to set the default privacy option when creating new Reports</li>
+                <li class="mt-1">Added data export in CSV format for Projects</li>
+                <li class="mt-1">Improved the color scheme</li>
+                <li class="mt-1">Improved the dark mode</li>
+                <li class="mt-1">Improved the SEO capabilities side-wide by adding in-file head tags for all public pages</li>
+                <li class="mt-1">Fixed not being able to update the Email Encryption option in the Admin Panel</li>
+                <li class="mt-1">Fixed the API Documentation URL path not pointing to the correct location</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">1</span> <span class="text-neutral-500 dark:text-neutral-400">— 8 January 2022</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Initial release</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="w-full border-t border-neutral-900/5 dark:border-neutral-100/10">
+        <div class="max-w-screen-lg mx-auto px-4">
+            <nav class="py-12">
+                <ul class="flex lg:space-x-10 lg:flex-row flex-col lg:space-y-0 space-y-6">
+                    <li>
+                        <a href="../index.html" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Products</a>
+                    </li>
+
+                    <li>
+                        <a href="../services" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Services</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../newsletter" role="button">Newsletter</a>
+                    </li>
+
+                    <li>
+                        <a href="../terms-of-service" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Terms of Service</a>
+                    </li>
+
+                    <li>
+                        <a href="../contact" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="text-neutral-500 mt-4">© 2025 Lunatio. All rights reserved.</div>
+            </nav>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

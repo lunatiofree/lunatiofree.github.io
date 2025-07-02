@@ -1,0 +1,801 @@
+
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>phpShort - URL Shortener Software - Lunatio</title>
+
+    <link rel="icon" type="image/png" href="https://lunatio.de/favicon.png">
+
+    <meta property="og:title" content="phpShort - URL Shortener Software">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lunatio.de/phpshort">
+    <meta property="og:image" content="https://lunatio.de/uploads/social/phpshort.png">
+    <meta property="og:description" content="Powerful URL shortener software to create, target, and track fully branded links using custom domains, retargeting pixels, and advanced analytics.">
+    <meta property="og:site_name" content="Lunatio">
+
+    <!-- Scripts -->
+    <script src="https://lunatio.de/assets/js/app.js" defer></script>
+
+    <!-- Styles -->
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet preconnect">
+    <link href="https://lunatio.de/assets/css/app.css" rel="stylesheet">
+</head>
+
+<body class="antialiased flex flex-col min-h-full text-neutral-700 dark:text-neutral-300 bg-white dark:bg-black selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+<div class="w-full top-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-sm relative">
+    <div class="border-b border-neutral-900/5 dark:border-neutral-100/10">
+        <nav class="max-w-screen-lg	mx-auto p-4 flex flex-row flex-wrap">
+            <a class="flex items-center text-neutral-700 hover:text-black dark:text-neutral-200 dark:hover:text-white -m-4 p-4" href="https://lunatio.de">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" class="w-6 h-6"><path d="M70,36.52A33.48,33.48,0,1,1,36.52,70,33.52,33.52,0,0,1,70,36.52m0-15A48.48,48.48,0,1,0,118.48,70,48.47,48.47,0,0,0,70,21.52Z" style="fill:currentColor"/><path d="M77.94,110.21A87.61,87.61,0,0,0,87.6,70a87.61,87.61,0,0,0-9.66-40.21,41,41,0,0,1,0,80.42Z" style="fill:currentColor"/><path d="M91.69,44.51a33.45,33.45,0,0,1,0,51A95.91,95.91,0,0,0,95.1,70a95.91,95.91,0,0,0-3.41-25.49M70,21.52a50.6,50.6,0,0,0-5.8.35A80.43,80.43,0,0,1,80.1,70a80.43,80.43,0,0,1-15.9,48.13,50.6,50.6,0,0,0,5.8.35,48.48,48.48,0,0,0,0-97Z" style="fill:currentColor"/><path d="M118.49,26.71A65,65,0,1,0,135,70,64.87,64.87,0,0,0,118.49,26.71Z" style="fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:10px"/></svg>
+
+                <div class="ml-2 text-lg font-medium">Lunatio</div>
+            </a>
+
+            <button class="ml-auto lg:hidden transition cursor-pointer text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" data-trigger="menu" data-target="#primary-menu" aria-label="Primary menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="items-center ml-0 lg:ml-auto lg:flex basis-full lg:basis-auto flex hidden" id="primary-menu">
+                <ul class="flex flex-col lg:flex-row mt-6 lg:mt-0 lg:space-x-10 space-y-6 lg:space-y-0">
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de" role="button">Products</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de/services" role="button">Services</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 flex items-center transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de/newsletter" role="button">Newsletter</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de/contact" role="button">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="w-full sticky top-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-sm">
+    <div class="border-b border-neutral-900/5 dark:border-neutral-100/10">
+        <nav class="max-w-screen-lg	mx-auto p-4 flex flex-row flex-wrap">
+            <a href="https://lunatio.de/phpshort" class="text-lg font-bold text-neutral-700 hover:text-black dark:text-neutral-200 dark:hover:text-white -m-4 p-4">phpShort</a>
+
+            <button class="ml-auto lg:hidden transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" data-trigger="menu" data-target="#product-menu" aria-label="Product menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="items-center ml-0 lg:ml-auto lg:flex basis-full lg:basis-auto flex hidden" id="product-menu">
+                <ul class="flex flex-col lg:flex-row mt-6 lg:mt-0 lg:space-x-10 space-y-6 lg:space-y-0">
+                    <li>
+                        <a class="p-2 -m-2 transition text-black hover:text-black dark:text-white dark:hover:text-white" href="https://lunatio.de/phpshort" role="button">Overview</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de/phpshort/changelog" role="button">Changelog</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de/phpshort/documentation" role="button">Documentation</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-violet-500 hover:text-violet-600 dark:text-violet-400 dark:hover:text-violet-300" href="https://phpshort.lunatio.de" target="_blank" rel="nofollow" role="button">
+                            Demo
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-violet-500 hover:text-violet-600 dark:text-violet-400 dark:hover:text-violet-300" href="https://1.envato.market/phpshort-regular" target="_blank" rel="nofollow" role="button">
+                            Buy
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="flex flex-col flex-auto">
+    <div class="max-w-screen-lg flex-auto mx-auto flex-fill px-4 relative py-16">
+        <div class="bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden w-full mb-12">
+            <div class="p-8 lg:p-12 z-10 relative">
+                <h1 class="text-violet-500 dark:text-violet-400 font-semibold text-lg sm:text-xl mb-3">phpShort</h1>
+
+                <h2 class="text-4xl sm:text-5xl mb-4 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                    URL Shortener Software
+                </h2>
+
+                <p class="mb-2 text-lg lg:text-xl text-neutral-500 dark:text-neutral-400">
+                    Powerful URL shortener software to create, target, and track fully branded links using custom domains, retargeting pixels, and advanced analytics.
+                </p>
+
+                <div class="flex items-center flex-wrap">
+                    <div class="inline-flex items-center mt-2 mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-400 dark:text-yellow-500 fill-current" height="20" width="20"><path d="M7.021 16.688Q6.521 17.083 5.99 16.708Q5.458 16.333 5.646 15.729L6.792 12L3.875 9.917Q3.354 9.542 3.552 8.938Q3.75 8.333 4.396 8.333H8L9.167 4.458Q9.271 4.146 9.5 3.99Q9.729 3.833 10 3.833Q10.271 3.833 10.5 3.99Q10.729 4.146 10.833 4.458L12 8.333H15.604Q16.25 8.333 16.448 8.938Q16.646 9.542 16.125 9.917L13.208 12L14.354 15.729Q14.542 16.333 14.01 16.708Q13.479 17.083 12.979 16.688L10 14.417Z"/></svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-400 dark:text-yellow-500 fill-current" height="20" width="20"><path d="M7.021 16.688Q6.521 17.083 5.99 16.708Q5.458 16.333 5.646 15.729L6.792 12L3.875 9.917Q3.354 9.542 3.552 8.938Q3.75 8.333 4.396 8.333H8L9.167 4.458Q9.271 4.146 9.5 3.99Q9.729 3.833 10 3.833Q10.271 3.833 10.5 3.99Q10.729 4.146 10.833 4.458L12 8.333H15.604Q16.25 8.333 16.448 8.938Q16.646 9.542 16.125 9.917L13.208 12L14.354 15.729Q14.542 16.333 14.01 16.708Q13.479 17.083 12.979 16.688L10 14.417Z"/></svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-400 dark:text-yellow-500 fill-current" height="20" width="20"><path d="M7.021 16.688Q6.521 17.083 5.99 16.708Q5.458 16.333 5.646 15.729L6.792 12L3.875 9.917Q3.354 9.542 3.552 8.938Q3.75 8.333 4.396 8.333H8L9.167 4.458Q9.271 4.146 9.5 3.99Q9.729 3.833 10 3.833Q10.271 3.833 10.5 3.99Q10.729 4.146 10.833 4.458L12 8.333H15.604Q16.25 8.333 16.448 8.938Q16.646 9.542 16.125 9.917L13.208 12L14.354 15.729Q14.542 16.333 14.01 16.708Q13.479 17.083 12.979 16.688L10 14.417Z"/></svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-400 dark:text-yellow-500 fill-current" height="20" width="20"><path d="M7.021 16.688Q6.521 17.083 5.99 16.708Q5.458 16.333 5.646 15.729L6.792 12L3.875 9.917Q3.354 9.542 3.552 8.938Q3.75 8.333 4.396 8.333H8L9.167 4.458Q9.271 4.146 9.5 3.99Q9.729 3.833 10 3.833Q10.271 3.833 10.5 3.99Q10.729 4.146 10.833 4.458L12 8.333H15.604Q16.25 8.333 16.448 8.938Q16.646 9.542 16.125 9.917L13.208 12L14.354 15.729Q14.542 16.333 14.01 16.708Q13.479 17.083 12.979 16.688L10 14.417Z"/></svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-400 dark:text-yellow-500 fill-current" height="20" width="20"><path d="M7.021 16.688Q6.521 17.083 5.99 16.708Q5.458 16.333 5.646 15.729L6.792 12L3.875 9.917Q3.354 9.542 3.552 8.938Q3.75 8.333 4.396 8.333H8L9.167 4.458Q9.271 4.146 9.5 3.99Q9.729 3.833 10 3.833Q10.271 3.833 10.5 3.99Q10.729 4.146 10.833 4.458L12 8.333H15.604Q16.25 8.333 16.448 8.938Q16.646 9.542 16.125 9.917L13.208 12L14.354 15.729Q14.542 16.333 14.01 16.708Q13.479 17.083 12.979 16.688L10 14.417Z"/></svg>
+                    </div>
+
+                    <div class="mt-2">
+                        <span class="font-medium">Rated 5 stars</span> <span class="text-neutral-500 dark:text-neutral-400">on</span> <a href="https://codecanyon.net/item/phpshort-url-shortener-software/reviews/26536593" class="font-medium transition hover:underline text-violet-500 hover:text-violet-600 dark:text-violet-400 dark:hover:text-violet-300" target="_blank" rel="nofollow">Envato</a>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex flex-wrap">
+                    <a href="https://1.envato.market/phpshort-regular" target="_blank" rel="nofollow" class="mr-4 mt-4 font-medium inline-flex items-center justify-center py-2.5 px-5 rounded-full text-white dark:text-black outline-none focus:ring-4 focus:ring-violet-600/30 dark:focus:ring-violet-400/30 transition bg-violet-500 hover:bg-violet-600 dark:bg-violet-400 dark:hover:bg-violet-300 text-base">
+                        Buy now
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                    </a>
+
+                    <a href="https://phpshort.lunatio.de" target="_blank" rel="nofollow" class="mt-4 font-medium inline-flex items-center justify-center py-2.5 px-5 rounded-full outline-none focus:ring-4 focus:ring-violet-600/30 dark:focus:ring-violet-400/30 transition text-violet-500 hover:text-violet-600 dark:text-violet-400 dark:hover:text-violet-300 text-base">
+                        Demo
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 -mb-24 md:-mb-36">
+                <div class="col-span-9">
+                    <picture>
+                        <source srcset="https://lunatio.de/uploads/phpshort/links-dark.png" media="(prefers-color-scheme: dark)">
+
+                        <img src="https://lunatio.de/uploads/phpshort/links.png" class="z-0 rounded-lg md:rounded-xl rotate-[-10deg] shadow-2xl [image-rendering:-webkit-optimize-contrast] border border-neutral-900/5 dark:border-neutral-100/10" width="3024" height="1965" alt="phpShort links">
+                    </picture>
+                </div>
+
+                <div class="col-span-3">
+                    <picture>
+                        <source srcset="https://lunatio.de/uploads/phpshort/links-mobile-dark.png" media="(prefers-color-scheme: dark)">
+
+                        <img src="https://lunatio.de/uploads/phpshort/links-mobile.png" width="1242" height="2688" class="z-0 rounded-lg md:rounded-xl rotate-[-10deg] shadow-2xl [image-rendering:-webkit-optimize-contrast] border border-neutral-900/5 dark:border-neutral-100/10" alt="phpShort links mobile">
+                    </picture>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-mt-24" id="shortener">
+            <div class="bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden w-full mb-12">
+                <div class="p-8 lg:p-12 z-10 relative">
+                    <h2 class="text-violet-500 dark:text-violet-400 font-semibold text-base sm:text-lg mb-2 uppercase">
+                        Shortener
+                    </h2>
+
+                    <h3 class="text-3xl sm:text-4xl mb-4 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                        Powerful link shortener.
+                    </h3>
+
+                    <p class="text-base lg:text-lg text-neutral-500 dark:text-neutral-400 mb-12">
+                        Give your links superpowers with advanced features for branding, tracking, and sharing. Increase visibility and inspire trust by branding links with custom domains and aliases.
+                    </p>
+
+                    <div class="grid gap-8 md:gap-12 grid-cols-1 md:grid-cols-3">
+                        <div class="flex flex-col">
+                            <div>
+                                <div class="bg-violet-500 dark:bg-violet-400 text-white dark:text-black w-12 h-12 flex justify-center items-center rounded-3xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" height="24" width="24"><path d="M11 17H7Q4.925 17 3.463 15.537Q2 14.075 2 12Q2 9.925 3.463 8.462Q4.925 7 7 7H11V9H7Q5.75 9 4.875 9.875Q4 10.75 4 12Q4 13.25 4.875 14.125Q5.75 15 7 15H11ZM8 13V11H16V13ZM13 17V15H17Q18.25 15 19.125 14.125Q20 13.25 20 12Q20 10.75 19.125 9.875Q18.25 9 17 9H13V7H17Q19.075 7 20.538 8.462Q22 9.925 22 12Q22 14.075 20.538 15.537Q19.075 17 17 17Z"/></svg>
+                                </div>
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg mt-4">
+                                    Links
+                                </div>
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Powerful links with targeting and tracking capabilities.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <div>
+                                <div class="bg-violet-500 dark:bg-violet-400 text-white dark:text-black w-12 h-12 flex justify-center items-center rounded-3xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" height="24" width="24"><path d="M6 21Q4.35 21 3.175 19.825Q2 18.65 2 17Q2 15.35 3.175 14.175Q4.35 13 6 13Q7.65 13 8.825 14.175Q10 15.35 10 17Q10 18.65 8.825 19.825Q7.65 21 6 21ZM12 11Q10.35 11 9.175 9.825Q8 8.65 8 7Q8 5.35 9.175 4.175Q10.35 3 12 3Q13.65 3 14.825 4.175Q16 5.35 16 7Q16 8.65 14.825 9.825Q13.65 11 12 11ZM18 21Q16.35 21 15.175 19.825Q14 18.65 14 17Q14 15.35 15.175 14.175Q16.35 13 18 13Q19.65 13 20.825 14.175Q22 15.35 22 17Q22 18.65 20.825 19.825Q19.65 21 18 21ZM12 9Q12.825 9 13.413 8.412Q14 7.825 14 7Q14 6.175 13.413 5.588Q12.825 5 12 5Q11.175 5 10.588 5.588Q10 6.175 10 7Q10 7.825 10.588 8.412Q11.175 9 12 9ZM6 19Q6.825 19 7.412 18.413Q8 17.825 8 17Q8 16.175 7.412 15.588Q6.825 15 6 15Q5.175 15 4.588 15.588Q4 16.175 4 17Q4 17.825 4.588 18.413Q5.175 19 6 19ZM18 19Q18.825 19 19.413 18.413Q20 17.825 20 17Q20 16.175 19.413 15.588Q18.825 15 18 15Q17.175 15 16.587 15.588Q16 16.175 16 17Q16 17.825 16.587 18.413Q17.175 19 18 19ZM12 7Q12 7 12 7Q12 7 12 7Q12 7 12 7Q12 7 12 7Q12 7 12 7Q12 7 12 7Q12 7 12 7Q12 7 12 7ZM6 17Q6 17 6 17Q6 17 6 17Q6 17 6 17Q6 17 6 17Q6 17 6 17Q6 17 6 17Q6 17 6 17Q6 17 6 17ZM18 17Q18 17 18 17Q18 17 18 17Q18 17 18 17Q18 17 18 17Q18 17 18 17Q18 17 18 17Q18 17 18 17Q18 17 18 17Z"/></svg>
+                                </div>
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg mt-4">
+                                    Spaces
+                                </div>
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Personalized spaces to organize and manage links.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <div>
+                                <div class="bg-violet-500 dark:bg-violet-400 text-white dark:text-black w-12 h-12 flex justify-center items-center rounded-3xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" viewBox="0 0 24 24" width="24px" height="24px"><path d="M 12 2 C 8.308 2 5.0855156 4.016 3.3535156 7 L 5.7949219 7 C 6.6949219 5.888 7.8693281 5.0079531 9.2363281 4.5019531 C 8.9233281 5.2299531 8.6724688 6.08 8.4804688 7 L 10.537109 7 C 11.016109 5.023 11.687 4 12 4 C 12.313 4 12.983891 5.023 13.462891 7 L 15.519531 7 C 15.327531 6.08 15.075672 5.2299531 14.763672 4.5019531 C 16.129672 5.0079531 17.305078 5.888 18.205078 7 L 20.646484 7 C 18.914484 4.016 15.692 2 12 2 z M 1 9 L 2.2421875 15 L 3.5507812 15 L 4.4003906 11.529297 L 5.2480469 15 L 6.5507812 15 L 7.7929688 9 L 6.2890625 9 L 5.7519531 12.365234 L 4.953125 9 L 3.8398438 9 L 3.0390625 12.371094 L 2.5078125 9 L 1 9 z M 8.6035156 9 L 9.8457031 15 L 11.154297 15 L 12.003906 11.529297 L 12.851562 15 L 14.154297 15 L 15.396484 9 L 13.894531 9 L 13.355469 12.365234 L 12.558594 9 L 11.443359 9 L 10.644531 12.371094 L 10.111328 9 L 8.6035156 9 z M 16.207031 9 L 17.449219 15 L 18.757812 15 L 19.607422 11.529297 L 20.455078 15 L 21.757812 15 L 23 9 L 21.496094 9 L 20.958984 12.365234 L 20.160156 9 L 19.046875 9 L 18.246094 12.371094 L 17.714844 9 L 16.207031 9 z M 3.3535156 17 C 5.0855156 19.984 8.308 22 12 22 C 15.692 22 18.914484 19.984 20.646484 17 L 18.205078 17 C 17.305078 18.112 16.130672 18.992047 14.763672 19.498047 C 15.075672 18.770047 15.325578 17.92 15.517578 17 L 13.460938 17 C 12.981938 18.977 12.311047 20 11.998047 20 C 11.685047 20 11.016109 18.977 10.537109 17 L 8.4804688 17 C 8.6724688 17.92 8.9243281 18.770047 9.2363281 19.498047 C 7.8703281 18.992047 6.6949219 18.112 5.7949219 17 L 3.3535156 17 z"/></svg>
+                                </div>
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg mt-4">
+                                    Domains
+                                </div>
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Link branding through custom domains integration.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 -mb-24 md:-mb-40 lg:-mb-56">
+                        <picture>
+                            <source srcset="https://lunatio.de/uploads/phpshort/links-dark.png" media="(prefers-color-scheme: dark)">
+
+                            <img src="https://lunatio.de/uploads/phpshort/links.png" class="z-0 rounded-lg md:rounded-xl shadow-2xl [image-rendering:-webkit-optimize-contrast] border border-neutral-900/5 dark:border-neutral-100/10" width="3024" height="1965" loading="lazy" alt="phpShort links">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-mt-24" id="analytics">
+            <div class="bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden w-full mb-12">
+                <div class="p-8 lg:p-12 z-10 relative">
+                    <h2 class="text-violet-500 dark:text-violet-400 font-semibold text-base sm:text-lg mb-2 uppercase">
+                        Analytics
+                    </h2>
+
+                    <h3 class="text-3xl sm:text-4xl mb-4 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                        Advanced link tracking.
+                    </h3>
+
+                    <p class="text-base lg:text-lg text-neutral-500 dark:text-neutral-400 mb-12">
+                        Better understand your links with advanced statistics about the referrers, countries, cities, languages, platforms, browsers, and devices used by the visitors.
+                    </p>
+
+                    <div class="grid gap-8 md:gap-12 grid-cols-1 md:grid-cols-3">
+                        <div class="flex flex-col">
+                            <div>
+                                <div class="bg-violet-500 dark:bg-violet-400 text-white dark:text-black w-12 h-12 flex justify-center items-center rounded-3xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" height="24" width="24"><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/><path d="M6,20L6,20c1.1,0,2-0.9,2-2v-7c0-1.1-0.9-2-2-2h0c-1.1,0-2,0.9-2,2v7C4,19.1,4.9,20,6,20z"/><path d="M16,15v3c0,1.1,0.9,2,2,2h0c1.1,0,2-0.9,2-2v-3c0-1.1-0.9-2-2-2h0C16.9,13,16,13.9,16,15z"/><path d="M12,20L12,20c1.1,0,2-0.9,2-2V6c0-1.1-0.9-2-2-2h0c-1.1,0-2,0.9-2,2v12C10,19.1,10.9,20,12,20z"/></svg>
+                                </div>
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg mt-4">
+                                    Analytics
+                                </div>
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Detailed link analytics with complete history.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <div>
+                                <div class="bg-violet-500 dark:bg-violet-400 text-white dark:text-black w-12 h-12 flex justify-center items-center rounded-3xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" height="24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M5 15H3v4c0 1.1.9 2 2 2h4v-2H5v-4zM5 5h4V3H5c-1.1 0-2 .9-2 2v4h2V5zm14-2h-4v2h4v4h2V5c0-1.1-.9-2-2-2zm0 16h-4v2h4c1.1 0 2-.9 2-2v-4h-2v4zM12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                                </div>
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg mt-4">
+                                    Pixels
+                                </div>
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Integration with the best pixel tracking services.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <div>
+                                <div class="bg-violet-500 dark:bg-violet-400 text-white dark:text-black w-12 h-12 flex justify-center items-center rounded-3xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" height="24" width="24"><path d="M12 16 7 11 8.4 9.55 11 12.15V4H13V12.15L15.6 9.55L17 11ZM6 20Q5.175 20 4.588 19.413Q4 18.825 4 18V15H6V18Q6 18 6 18Q6 18 6 18H18Q18 18 18 18Q18 18 18 18V15H20V18Q20 18.825 19.413 19.413Q18.825 20 18 20Z"/></svg>
+                                </div>
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg mt-4">
+                                    Export
+                                </div>
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    CSV file export for all links and their statistics.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 -mb-24 md:-mb-40 lg:-mb-56">
+                        <picture>
+                            <source srcset="https://lunatio.de/uploads/phpshort/stats-overview-dark.png" media="(prefers-color-scheme: dark)">
+
+                            <img src="https://lunatio.de/uploads/phpshort/stats-overview.png" class="z-0 rounded-lg md:rounded-xl shadow-2xl [image-rendering:-webkit-optimize-contrast] border border-neutral-900/5 dark:border-neutral-100/10" width="3024" height="1965" loading="lazy" alt="phpShort stats overview">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-mt-24" id="payment-system">
+            <div class="bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden w-full mb-12">
+                <div class="p-8 lg:p-12 z-10 relative">
+                    <div>
+                        <h2 class="text-violet-500 dark:text-violet-400 font-semibold text-base sm:text-lg mb-2 uppercase">
+                            Payment system
+                        </h2>
+
+                        <h3 class="text-3xl sm:text-4xl mb-4 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                            Ready for business.
+                        </h3>
+
+                        <p class="text-base lg:text-lg text-neutral-500 dark:text-neutral-400 mb-12">
+                            Sell subscription based services with the <a href="https://lunatio.de/phpshort/#pricing" class="font-medium transition hover:underline text-violet-500 hover:text-violet-600 dark:text-violet-400 dark:hover:text-violet-300">Extended</a> license. Integrations available with <span class="text-[#253b80] dark:text-[#395cc6] font-semibold">Pay</span><span class="text-[#179bd7] dark:text-[#179bd7] font-semibold">Pal</span>, <span class="text-[#635bff] dark:text-[#635bff] font-semibold">Stripe</span>, <span class="text-black dark:text-white font-semibold">Mollie</span>, <span class="text-[#45567c] dark:text-[#fff800] font-semibold">Paddle</span>, <span class="text-[#3395ff] dark:text-[#3395ff] font-semibold">Razorpay</span>, <span class="text-[#00c3f7] dark:text-[#00c3f7] font-semibold">Paystack</span>, <span class="text-[#0052ff] dark:text-[#0052ff] font-semibold">Coinbase</span>, <span class="text-[#0b1426] dark:text-[#fefefe] font-semibold">Crypto.com</span>, and <span class="font-semibold">Bank</span>.
+                        </p>
+                    </div>
+
+                    <div class="grid gap-8 md:gap-12 grid-cols-1 md:grid-cols-3">
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-violet-500 dark:text-violet-400 shrink-0 mt-0.5" height="24" width="24"><path d="M22 6V18Q22 18.825 21.413 19.413Q20.825 20 20 20H4Q3.175 20 2.588 19.413Q2 18.825 2 18V6Q2 5.175 2.588 4.588Q3.175 4 4 4H20Q20.825 4 21.413 4.588Q22 5.175 22 6ZM4 8H20V6Q20 6 20 6Q20 6 20 6H4Q4 6 4 6Q4 6 4 6ZM4 12V18Q4 18 4 18Q4 18 4 18H20Q20 18 20 18Q20 18 20 18V12ZM4 18Q4 18 4 18Q4 18 4 18V6Q4 6 4 6Q4 6 4 6Q4 6 4 6Q4 6 4 6V18Q4 18 4 18Q4 18 4 18Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Payments
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Accept online and offline payments.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-violet-500 dark:text-violet-400 shrink-0 mt-0.5" width="24px" height="24px"><path d="M 5.75 3 A 1.0001 1.0001 0 0 0 4.8867188 3.4960938 L 3.1367188 6.4960938 A 1.0001 1.0001 0 0 0 3 7 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 7 A 1.0001 1.0001 0 0 0 20.863281 6.4960938 L 19.113281 3.4960938 A 1.0001 1.0001 0 0 0 18.25 3 L 5.75 3 z M 6.3242188 5 L 11 5 L 11 7 L 5.1582031 7 L 6.3242188 5 z M 13 5 L 17.675781 5 L 18.841797 7 L 13 7 L 13 5 z M 5 9 L 19 9 L 19 19 L 5 19 L 5 9 z M 9 11 L 9 13 L 15 13 L 15 11 L 9 11 z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Plans
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Sell custom plans with monthly and yearly pricing.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-violet-500 dark:text-violet-400 shrink-0 mt-0.5" height="24" width="24"><path d="M4 13V15Q4 15 4 15Q4 15 4 15H20Q20 15 20 15Q20 15 20 15V13ZM4 2H20Q20.825 2 21.413 2.587Q22 3.175 22 4V15Q22 15.825 21.413 16.413Q20.825 17 20 17H16V22L12 20L8 22V17H4Q3.175 17 2.588 16.413Q2 15.825 2 15V4Q2 3.175 2.588 2.587Q3.175 2 4 2ZM4 10H20V4Q20 4 20 4Q20 4 20 4H4Q4 4 4 4Q4 4 4 4ZM4 15V4Q4 4 4 4Q4 4 4 4Q4 4 4 4Q4 4 4 4V15Q4 15 4 15Q4 15 4 15Q4 15 4 15Q4 15 4 15Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Subscriptions
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Users can subscribe to the created plans.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-violet-500 dark:text-violet-400 shrink-0 mt-0.5" height="24" width="24"><path d="M4 20Q3.175 20 2.588 19.413Q2 18.825 2 18V14Q2.825 14 3.413 13.412Q4 12.825 4 12Q4 11.175 3.413 10.587Q2.825 10 2 10V6Q2 5.175 2.588 4.588Q3.175 4 4 4H20Q20.825 4 21.413 4.588Q22 5.175 22 6V10Q21.175 10 20.587 10.587Q20 11.175 20 12Q20 12.825 20.587 13.412Q21.175 14 22 14V18Q22 18.825 21.413 19.413Q20.825 20 20 20ZM4 18H20V15.45Q19.075 14.9 18.538 13.988Q18 13.075 18 12Q18 10.925 18.538 10.012Q19.075 9.1 20 8.55V6H4V8.55Q4.925 9.1 5.463 10.012Q6 10.925 6 12Q6 13.075 5.463 13.988Q4.925 14.9 4 15.45ZM12 17Q12.425 17 12.713 16.712Q13 16.425 13 16Q13 15.575 12.713 15.287Q12.425 15 12 15Q11.575 15 11.288 15.287Q11 15.575 11 16Q11 16.425 11.288 16.712Q11.575 17 12 17ZM12 13Q12.425 13 12.713 12.712Q13 12.425 13 12Q13 11.575 12.713 11.287Q12.425 11 12 11Q11.575 11 11.288 11.287Q11 11.575 11 12Q11 12.425 11.288 12.712Q11.575 13 12 13ZM12 9Q12.425 9 12.713 8.712Q13 8.425 13 8Q13 7.575 12.713 7.287Q12.425 7 12 7Q11.575 7 11.288 7.287Q11 7.575 11 8Q11 8.425 11.288 8.712Q11.575 9 12 9ZM12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Coupons
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Collect tax rates or additional fees on payments.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-violet-500 dark:text-violet-400 shrink-0 mt-0.5" height="24" width="24"><path d="M8 17H10V16H11Q11.425 16 11.713 15.712Q12 15.425 12 15V12Q12 11.575 11.713 11.287Q11.425 11 11 11H8V10H12V8H10V7H8V8H7Q6.575 8 6.287 8.287Q6 8.575 6 9V12Q6 12.425 6.287 12.712Q6.575 13 7 13H10V14H6V16H8ZM16 16.25 18 14.25H14ZM14 10H18L16 8ZM4 20Q3.175 20 2.588 19.413Q2 18.825 2 18V6Q2 5.175 2.588 4.588Q3.175 4 4 4H20Q20.825 4 21.413 4.588Q22 5.175 22 6V18Q22 18.825 21.413 19.413Q20.825 20 20 20ZM4 18Q4 18 4 18Q4 18 4 18V6Q4 6 4 6Q4 6 4 6Q4 6 4 6Q4 6 4 6V18Q4 18 4 18Q4 18 4 18ZM4 18H20Q20 18 20 18Q20 18 20 18V6Q20 6 20 6Q20 6 20 6H4Q4 6 4 6Q4 6 4 6V18Q4 18 4 18Q4 18 4 18Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Tax rates
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Offer promotional discounts or redeemable coupons.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-violet-500 dark:text-violet-400 shrink-0 mt-0.5" height="24" width="24"><path d="M3 22V2L4.5 3.5L6 2L7.5 3.5L9 2L10.5 3.5L12 2L13.5 3.5L15 2L16.5 3.5L18 2L19.5 3.5L21 2V22L19.5 20.5L18 22L16.5 20.5L15 22L13.5 20.5L12 22L10.5 20.5L9 22L7.5 20.5L6 22L4.5 20.5ZM6 17H18V15H6ZM6 13H18V11H6ZM6 9H18V7H6ZM5 19.1H19V4.9H5ZM5 4.9V19.1Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Invoices
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Invoices generated automatically on platform.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 -mb-24 md:-mb-40 lg:-mb-56">
+                        <picture>
+                            <source srcset="https://lunatio.de/uploads/phpshort/checkout-dark.png" media="(prefers-color-scheme: dark)">
+
+                            <img src="https://lunatio.de/uploads/phpshort/checkout.png" class="z-0 rounded-lg md:rounded-xl shadow-2xl [image-rendering:-webkit-optimize-contrast] border border-neutral-900/5 dark:border-neutral-100/10" width="3024" height="1965" loading="lazy" alt="phpShort checkout">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-mt-24" id="features">
+            <div class="bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden w-full mb-12">
+                <div class="p-8 lg:p-12 z-10 relative">
+                    <h2 class="text-violet-500 dark:text-violet-400 font-semibold text-base sm:text-lg mb-2 uppercase">
+                        Features
+                    </h2>
+
+                    <h3 class="text-3xl sm:text-4xl mb-4 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                        We're not done yet.
+                    </h3>
+
+                    <p class="text-base lg:text-lg text-neutral-500 dark:text-neutral-400 mb-12">
+                        Here's even more features that our product comes with. These features are designed to meet the highest standards in the industry.
+                    </p>
+
+                    <div class="grid gap-8 md:gap-12 grid-cols-1 md:grid-cols-3">
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Admin panel
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Powerful admin panel to manage your website.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Multi-language
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Support for multiple languages.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    RTL support
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Support for right-to-left languages.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Responsive design
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Responsive on mobile, and desktop devices.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Retina display
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    User interface ready for high DPI screens.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Dark mode
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Turn off the lights on your website.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Authentication
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Login with <span class="font-medium text-neutral-900 dark:text-neutral-50">Google</span>, <span class="font-medium text-neutral-900 dark:text-neutral-50">Apple</span>, and <span class="font-medium text-neutral-900 dark:text-neutral-50">Microsoft</span> accounts.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Two-factor authentication
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Secure logins with email verification codes.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Privacy compliant
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Meets <span class="font-medium text-neutral-900 dark:text-neutral-50">GDPR</span>, <span class="font-medium text-neutral-900 dark:text-neutral-50">CCPA</span>, <span class="font-medium text-neutral-900 dark:text-neutral-50">PECR</span>, and <span class="font-medium text-neutral-900 dark:text-neutral-50">Cookie Law</span>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Storage
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Support for <span class="font-medium text-neutral-900 dark:text-neutral-50">DigitalOcean</span>, <span class="font-medium text-neutral-900 dark:text-neutral-50">Amazon</span>, or <span class="font-medium text-neutral-900 dark:text-neutral-50">Backblaze</span>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    API system
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Fully fledged API system for your users.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    SEO friendly
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Templates files ready for dynamic meta tags.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Self-hosted
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Run the software on your own server. See <a href="https://lunatio.de/phpuptime/documentation#requirements" class="font-medium transition hover:underline text-cyan-500 hover:text-cyan-600 dark:text-cyan-400 dark:hover:text-cyan-300">requirements</a>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Back-end
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Coded on the <span class="font-medium text-neutral-900 dark:text-neutral-50">Laravel</span> framework.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Front-end
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Designed on the <span class="font-medium text-neutral-900 dark:text-neutral-50">Bootstrap</span> framework.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-mt-24" id="pricing">
+            <div class="bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden w-full">
+                <div class="p-8 lg:p-12 z-10 relative">
+                    <h2 class="text-violet-500 dark:text-violet-400 font-semibold text-base sm:text-lg mb-2 uppercase">
+                        Pricing
+                    </h2>
+
+                    <h3 class="text-3xl sm:text-4xl mb-4 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                        Pay once, own forever.
+                    </h3>
+
+                    <p class="text-base lg:text-lg text-neutral-500 dark:text-neutral-400 mb-12">
+                        Our licenses are priced very simple. You pay once, and you own your license forever. You get complete source code access and free updates.
+                    </p>
+
+                    <div class="grid gap-8 md:gap-12 grid-cols-1 md:grid-cols-2">
+                        <div>
+                            <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg mb-2">
+                                Regular
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="text-4xl sm:text-5xl text-neutral-900 dark:text-neutral-50 font-extrabold">$49</div>
+                            </div>
+
+                            <div class="text-neutral-500 dark:text-neutral-400">
+                                <ul class="space-y-2">
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Use in a single website
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Source code access
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Lifetime license
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Free updates
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-red-600 dark:text-red-400 shrink-0 mr-2" height="20" width="20"><path d="M5.375 15.854 4.146 14.625 8.771 10 4.146 5.375 5.375 4.146 10 8.771 14.625 4.146 15.854 5.375 11.229 10 15.854 14.625 14.625 15.854 10 11.229Z"/></svg>
+                                        Payment system
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <a href="https://1.envato.market/phpshort-regular" target="_blank" rel="nofollow" class="mt-4 md:mt-8 font-medium inline-flex items-center justify-center py-2.5 px-5 rounded-full text-white dark:text-black outline-none focus:ring-4 focus:ring-violet-600/30 dark:focus:ring-violet-400/30 transition bg-violet-500 hover:bg-violet-600 dark:bg-violet-400 dark:hover:bg-violet-300 text-base">
+                                Buy now
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                            </a>
+                        </div>
+
+                        <div>
+                            <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg mb-2">
+                                Extended
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="text-4xl sm:text-5xl text-neutral-900 dark:text-neutral-50 font-extrabold">$199</div>
+                            </div>
+
+                            <div class="text-neutral-500 dark:text-neutral-400">
+                                <ul class="space-y-2">
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Use in a single website
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Source code access
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Lifetime license
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Free updates
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Payment system
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <a href="https://1.envato.market/phpshort-extended" target="_blank" rel="nofollow" class="mt-4 md:mt-8 font-medium inline-flex items-center justify-center py-2.5 px-5 rounded-full text-white dark:text-black outline-none focus:ring-4 focus:ring-violet-600/30 dark:focus:ring-violet-400/30 transition bg-violet-500 hover:bg-violet-600 dark:bg-violet-400 dark:hover:bg-violet-300 text-base">
+                                Buy now
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 text-neutral-500 dark:text-neutral-400 text-sm">
+                        Full license terms available at: <a href="https://lunatio.de/license-terms" class="inline-flex items-center font-medium transition hover:underline text-violet-500 hover:text-violet-600 dark:text-violet-400 dark:hover:text-violet-300" target="_blank" rel="nofollow">lunatio.de/license-terms</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="w-full border-t border-neutral-900/5 dark:border-neutral-100/10">
+        <div class="max-w-screen-lg mx-auto px-4">
+            <nav class="py-12">
+                <ul class="flex lg:space-x-10 lg:flex-row flex-col lg:space-y-0 space-y-6">
+                    <li>
+                        <a href="https://lunatio.de" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Products</a>
+                    </li>
+
+                    <li>
+                        <a href="https://lunatio.de/services" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Services</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de/newsletter" role="button">Newsletter</a>
+                    </li>
+
+                    <li>
+                        <a href="https://lunatio.de/terms-of-service" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Terms of Service</a>
+                    </li>
+
+                    <li>
+                        <a href="https://lunatio.de/contact" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="text-neutral-500 mt-4">© 2025 Lunatio. All rights reserved.</div>
+            </nav>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

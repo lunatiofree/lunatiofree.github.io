@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>phpUptime - Changelog - Lunatio</title>
+
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <meta name="description" content="New features, improvements, and fixes to phpUptime software.">
+
+    <!-- Scripts -->
+    <script src="../assets/js/app.js" defer></script>
+
+    <!-- Styles -->
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet preconnect">
+    <link href="../assets/css/app.css" rel="stylesheet">
+</head>
+
+<body class="antialiased flex flex-col min-h-full text-neutral-700 dark:text-neutral-300 bg-white dark:bg-black selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+<div class="w-full top-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-sm relative">
+    <div class="border-b border-neutral-900/5 dark:border-neutral-100/10">
+        <nav class="max-w-screen-lg	mx-auto p-4 flex flex-row flex-wrap">
+            <a class="flex items-center text-neutral-700 hover:text-black dark:text-neutral-200 dark:hover:text-white -m-4 p-4" href="../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" class="w-6 h-6"><path d="M70,36.52A33.48,33.48,0,1,1,36.52,70,33.52,33.52,0,0,1,70,36.52m0-15A48.48,48.48,0,1,0,118.48,70,48.47,48.47,0,0,0,70,21.52Z" style="fill:currentColor"/><path d="M77.94,110.21A87.61,87.61,0,0,0,87.6,70a87.61,87.61,0,0,0-9.66-40.21,41,41,0,0,1,0,80.42Z" style="fill:currentColor"/><path d="M91.69,44.51a33.45,33.45,0,0,1,0,51A95.91,95.91,0,0,0,95.1,70a95.91,95.91,0,0,0-3.41-25.49M70,21.52a50.6,50.6,0,0,0-5.8.35A80.43,80.43,0,0,1,80.1,70a80.43,80.43,0,0,1-15.9,48.13,50.6,50.6,0,0,0,5.8.35,48.48,48.48,0,0,0,0-97Z" style="fill:currentColor"/><path d="M118.49,26.71A65,65,0,1,0,135,70,64.87,64.87,0,0,0,118.49,26.71Z" style="fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:10px"/></svg>
+
+                <div class="ml-2 text-lg font-medium">Lunatio</div>
+            </a>
+
+            <button class="ml-auto lg:hidden transition cursor-pointer text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" data-trigger="menu" data-target="#primary-menu" aria-label="Primary menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="items-center ml-0 lg:ml-auto lg:flex basis-full lg:basis-auto flex hidden" id="primary-menu">
+                <ul class="flex flex-col lg:flex-row mt-6 lg:mt-0 lg:space-x-10 space-y-6 lg:space-y-0">
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../index.html" role="button">Products</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../services" role="button">Services</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 flex items-center transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../newsletter" role="button">Newsletter</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../contact" role="button">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="w-full sticky top-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-sm">
+    <div class="border-b border-neutral-900/5 dark:border-neutral-100/10">
+        <nav class="max-w-screen-lg	mx-auto p-4 flex flex-row flex-wrap">
+            <a href="../phpuptime" class="text-lg font-bold text-neutral-700 hover:text-black dark:text-neutral-200 dark:hover:text-white -m-4 p-4">phpUptime</a>
+
+            <button class="ml-auto lg:hidden transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" data-trigger="menu" data-target="#product-menu" aria-label="Product menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="items-center ml-0 lg:ml-auto lg:flex basis-full lg:basis-auto flex hidden" id="product-menu">
+                <ul class="flex flex-col lg:flex-row mt-6 lg:mt-0 lg:space-x-10 space-y-6 lg:space-y-0">
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../phpuptime" role="button">Overview</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-black hover:text-black dark:text-white dark:hover:text-white" href="changelog" role="button">Changelog</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="documentation" role="button">Documentation</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-cyan-500 hover:text-cyan-600 dark:text-cyan-400 dark:hover:text-cyan-300" href="https://phpuptime.lunatio.de" target="_blank" rel="nofollow" role="button">
+                            Demo
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-cyan-500 hover:text-cyan-600 dark:text-cyan-400 dark:hover:text-cyan-300" href="https://1.envato.market/phpuptime-regular" target="_blank" rel="nofollow" role="button">
+                            Buy
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="flex flex-col flex-auto">
+    <div class="max-w-screen-lg w-full px-4 py-16 flex-auto mx-auto">
+        <h1 class="text-3xl sm:text-4xl mb-12 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">Changelog</h1>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">6</span> <span class="text-neutral-500 dark:text-neutral-400">— 21 June 2025</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new payment gateway: Mollie (checkout using a credit card)</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">5</span> <span class="text-neutral-500 dark:text-neutral-400">— 20 June 2025</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added Telegram notification channel support</li>
+                <li class="mt-1">Added help resource URLs for notification channels</li>
+                <li class="mt-1">Fixed the default Timezone not being applied to Guest users</li>
+                <li class="mt-1">Fixed Incidents Acknowledged and Ended timestamps not using preferred timezone</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">4</span> <span class="text-neutral-500 dark:text-neutral-400">— 8 June 2025</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Improved the UI for sidebar and context menu elements</li>
+                <li class="mt-1">Fixed an issue preventing public pages from being seen by Guest Users</li>
+                <li class="mt-1">Fixed the automatic pause for inactive monitors not working</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">3</span> <span class="text-neutral-500 dark:text-neutral-400">— 4 June 2025</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Added new payment gateway: Paddle (checkout using a credit card)</li>
+                <li class="mt-1">Added the ability to create free plans on Regular License</li>
+                <li class="mt-1">Added Domain Name Monitoring functionality (Plan option)</li>
+                <li class="mt-1">Added Cache Buster option for Monitors (when enabled, every request is unique)</li>
+                <li class="mt-1">Added the ability to trigger Monitor Incidents when the Request Response contains a specific text</li>
+                <li class="mt-1">Added the ability to trigger Monitor Incidents when the Request Response does not contain a specific text</li>
+                <li class="mt-1">Added the ability to define the Request Method for monitors (GET, POST, HEAD, PUT, DELETE, PATCH, OPTIONS)</li>
+                <li class="mt-1">Added the ability to define the Request Headers for Monitors</li>
+                <li class="mt-1">Added the ability to define Request HTTP authentication for Monitors</li>
+                <li class="mt-1">Improved the UI for sidebar and context menu elements</li>
+                <li class="mt-1">Fixed SSL status being displayed even when SSL monitoring was disabled</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">2</span> <span class="text-neutral-500 dark:text-neutral-400">— 12 May 2025</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Fixed the Response Time returning zero on some environments</li>
+                <li class="mt-1">Fixed Custom Domains for Status Pages not working for the base URL</li>
+                <li class="mt-1">Fixed logo and favicon not being saved when creating a new Status Page</li>
+                <li class="mt-1">Fixed an issue with the Incidents page not working for non-Admin Users</li>
+                <li class="mt-1">Fixed the installation failing on MySQL servers older than version 8</li>
+                <li class="mt-1">Other minor improvements</li>
+            </ul>
+        </div>
+
+        <div class="mt-12">
+            <div class="text-lg">
+                <span class="font-bold text-neutral-900 dark:text-neutral-50">1</span> <span class="text-neutral-500 dark:text-neutral-400">— 6 May 2025</span>
+            </div>
+
+            <ul class="mt-2 list-disc pl-6">
+                <li class="mt-1">Initial release</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="w-full border-t border-neutral-900/5 dark:border-neutral-100/10">
+        <div class="max-w-screen-lg mx-auto px-4">
+            <nav class="py-12">
+                <ul class="flex lg:space-x-10 lg:flex-row flex-col lg:space-y-0 space-y-6">
+                    <li>
+                        <a href="../index.html" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Products</a>
+                    </li>
+
+                    <li>
+                        <a href="../services" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Services</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../newsletter" role="button">Newsletter</a>
+                    </li>
+
+                    <li>
+                        <a href="../terms-of-service" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Terms of Service</a>
+                    </li>
+
+                    <li>
+                        <a href="../contact" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="text-neutral-500 mt-4">© 2025 Lunatio. All rights reserved.</div>
+            </nav>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

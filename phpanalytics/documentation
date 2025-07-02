@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>phpAnalytics - Documentation - Lunatio</title>
+
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <meta name="description" content="Documentation for the installation and configuration of phpAnalytics software.">
+
+    <!-- Scripts -->
+    <script src="../assets/js/app.js" defer></script>
+
+    <!-- Styles -->
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet preconnect">
+    <link href="../assets/css/app.css" rel="stylesheet">
+</head>
+
+<body class="antialiased flex flex-col min-h-full text-neutral-700 dark:text-neutral-300 bg-white dark:bg-black selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+<div class="w-full top-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-sm relative">
+    <div class="border-b border-neutral-900/5 dark:border-neutral-100/10">
+        <nav class="max-w-screen-lg	mx-auto p-4 flex flex-row flex-wrap">
+            <a class="flex items-center text-neutral-700 hover:text-black dark:text-neutral-200 dark:hover:text-white -m-4 p-4" href="../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" class="w-6 h-6"><path d="M70,36.52A33.48,33.48,0,1,1,36.52,70,33.52,33.52,0,0,1,70,36.52m0-15A48.48,48.48,0,1,0,118.48,70,48.47,48.47,0,0,0,70,21.52Z" style="fill:currentColor"/><path d="M77.94,110.21A87.61,87.61,0,0,0,87.6,70a87.61,87.61,0,0,0-9.66-40.21,41,41,0,0,1,0,80.42Z" style="fill:currentColor"/><path d="M91.69,44.51a33.45,33.45,0,0,1,0,51A95.91,95.91,0,0,0,95.1,70a95.91,95.91,0,0,0-3.41-25.49M70,21.52a50.6,50.6,0,0,0-5.8.35A80.43,80.43,0,0,1,80.1,70a80.43,80.43,0,0,1-15.9,48.13,50.6,50.6,0,0,0,5.8.35,48.48,48.48,0,0,0,0-97Z" style="fill:currentColor"/><path d="M118.49,26.71A65,65,0,1,0,135,70,64.87,64.87,0,0,0,118.49,26.71Z" style="fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:10px"/></svg>
+
+                <div class="ml-2 text-lg font-medium">Lunatio</div>
+            </a>
+
+            <button class="ml-auto lg:hidden transition cursor-pointer text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" data-trigger="menu" data-target="#primary-menu" aria-label="Primary menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="items-center ml-0 lg:ml-auto lg:flex basis-full lg:basis-auto flex hidden" id="primary-menu">
+                <ul class="flex flex-col lg:flex-row mt-6 lg:mt-0 lg:space-x-10 space-y-6 lg:space-y-0">
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../index.html" role="button">Products</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../services" role="button">Services</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 flex items-center transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../newsletter" role="button">Newsletter</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../contact" role="button">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="w-full sticky top-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-sm">
+    <div class="border-b border-neutral-900/5 dark:border-neutral-100/10">
+        <nav class="max-w-screen-lg	mx-auto p-4 flex flex-row flex-wrap">
+            <a href="../phpanalytics" class="text-lg font-bold text-neutral-700 hover:text-black dark:text-neutral-200 dark:hover:text-white -m-4 p-4">phpAnalytics</a>
+
+            <button class="ml-auto lg:hidden transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" data-trigger="menu" data-target="#product-menu" aria-label="Product menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="items-center ml-0 lg:ml-auto lg:flex basis-full lg:basis-auto flex hidden" id="product-menu">
+                <ul class="flex flex-col lg:flex-row mt-6 lg:mt-0 lg:space-x-10 space-y-6 lg:space-y-0">
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../phpanalytics" role="button">Overview</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="changelog" role="button">Changelog</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-black hover:text-black dark:text-white dark:hover:text-white" href="documentation" role="button">Documentation</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 " href="https://phpanalytics.lunatio.de" target="_blank" rel="nofollow" role="button">
+                            Demo
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                        </a>
+                    </li>
+
+                    <li class="mb-1">
+                        <a class="p-2 -m-2 transition flex items-center text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 " href="https://1.envato.market/phpanalytics-regular" target="_blank" rel="nofollow" role="button">
+                            Buy
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="flex flex-col flex-auto">
+    <div class="max-w-screen-lg w-full px-4 py-16 flex-auto mx-auto">
+        <h1 class="text-3xl sm:text-4xl mb-12 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">Documentation</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-24 md:gap-8">
+            <div class="col-span-1 md:col-span-3" id="documentation-menu">
+                <nav class="sticky top-24 flex basis-full items-center">
+                    <ul class="flex flex-col space-y-8">
+
+                        <li class="space-y-3">
+                            <a href="documentation#getting-started" class="block font-medium transition text-neutral-900 dark:text-neutral-50 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-900 dark:text-neutral-50" data-active="text-blue-500 dark:text-blue-400">Getting started</a>
+
+                            <ul class="space-y-3 text-sm">
+                                <li class="space-y-3">
+                                    <a href="documentation#introduction" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Introduction</a>
+                                </li>
+                                <li class="space-y-3">
+                                    <a href="documentation#requirements" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Requirements</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="space-y-3">
+                            <a href="documentation#installation" class="block font-medium transition text-neutral-900 dark:text-neutral-50 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-900 dark:text-neutral-50" data-active="text-blue-500 dark:text-blue-400">Installation</a>
+
+                            <ul class="space-y-3 text-sm">
+                                <li class="space-y-3">
+                                    <a href="documentation#creating-the-database" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Creating the database</a>
+                                </li>
+                                <li class="space-y-3">
+                                    <a href="documentation#uploading-the-files" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Uploading the files</a>
+                                </li>
+                                <li class="space-y-3">
+                                    <a href="documentation#configuring-the-files" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Configuring the files</a>
+                                </li>
+                                <li class="space-y-3">
+                                    <a href="documentation#changing-the-public-directory" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Changing the public directory</a>
+                                </li>
+                                <li class="space-y-3">
+                                    <a href="documentation#finishing-the-installation" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Finishing the installation</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="space-y-3">
+                            <a href="documentation#configuration" class="block font-medium transition text-neutral-900 dark:text-neutral-50 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-900 dark:text-neutral-50" data-active="text-blue-500 dark:text-blue-400">Configuration</a>
+
+                            <ul class="space-y-3 text-sm">
+                                <li class="space-y-3">
+                                    <a href="documentation#cron-job" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Cron job</a>
+                                </li>
+                                <li class="space-y-3">
+                                    <a href="documentation#email" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Email</a>
+                                </li>
+                                <li class="space-y-3">
+                                    <a href="documentation#authentication" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Authentication</a>
+                                </li>
+                                <li class="space-y-3">
+                                    <a href="documentation#captcha" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Captcha</a>
+                                </li>
+                                <li class="space-y-3">
+                                    <a href="documentation#payment-processors" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Payment processors</a>
+                                </li>
+                                <li class="space-y-3">
+                                    <a href="documentation#storage" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Storage</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="space-y-3">
+                            <a href="documentation#update" class="block font-medium transition text-neutral-900 dark:text-neutral-50 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-900 dark:text-neutral-50" data-active="text-blue-500 dark:text-blue-400">Update</a>
+
+                            <ul class="space-y-3 text-sm">
+                                <li class="space-y-3">
+                                    <a href="documentation#backing-up" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Backing up</a>
+                                </li>
+                                <li class="space-y-3">
+                                    <a href="documentation#updating" class="transition text-neutral-500 dark:text-neutral-400 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-500 dark:text-neutral-400" data-active="text-blue-500 dark:text-blue-400">Updating</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="space-y-3">
+                            <a href="documentation#faq" class="block font-medium transition text-neutral-900 dark:text-neutral-50 hover:text-blue-500 hover:dark:text-blue-400" data-inactive="text-neutral-900 dark:text-neutral-50" data-active="text-blue-500 dark:text-blue-400">FAQ</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-span-1 md:col-span-9" id="documentation-content">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="getting-started">Getting started</h2>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="introduction">Introduction</h3>
+
+                        <p class="mb-4">This page describes the installation and configuration steps of <a href="../phpanalytics" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">phpAnalytics</a> software.</p>
+
+                        <p class="mb-4">If you're not familiar with the instructions on this page, we offer installation <a href="../services" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" data-scroll-to="75">Services</a>, for an additional fee.</p>
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="requirements">Requirements</h3>
+
+                        <p class="mb-4">Before installing the software, please make sure your server meets the requirements below.</p>
+
+                        <div class="text-left text-sm rounded-sm overflow-hidden border border-neutral-900/5 dark:border-neutral-100/10">
+                            <table class="w-full">
+                                <thead class="bg-neutral-100 dark:bg-neutral-900">
+                                <tr>
+                                    <th class="px-4 py-3 font-semibold">Software</th>
+                                    <th class="px-4 py-3 font-semibold">Modules</th>
+                                </tr>
+                                </thead>
+
+                                <tbody class="divide-y divide-neutral-900/5 dark:divide-neutral-100/10">
+                                <tr>
+                                    <td class="px-4 py-3">PHP 8.2.x</td>
+                                    <td class="px-4 py-3">BCMath, Ctype, cURL, DOM, Exif, Fileinfo, Filter, GD, Hash, Intl, JSON, Mbstring, OpenSSL, PCRE, PDO, Session, Sodium, Tokenizer, XML</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="px-4 py-3">Apache 2+</td>
+                                    <td class="px-4 py-3">mod_rewrite</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="px-4 py-3">MySQL 5.7.7+ <br>MariaDB 10.3.17+</td>
+                                    <td class="px-4 py-3"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-neutral-900/5 dark:border-neutral-100/10 my-12">
+
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="installation">Installation</h2>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="creating-the-database">Creating the database</h3>
+
+                        <ol class="list-decimal pl-6 mb-4">
+                            <li class="mb-1">Create a new MySQL database.</li>
+
+                            <li class="mb-1">Create a new MySQL username and password.</li>
+
+                            <li class="mb-1">Assign full privileges to your database username.</li>
+                        </ol>
+
+                        <div class="text-sm">
+                            <div class="text-neutral-500 dark:text-neutral-400">Useful resources</div>
+                            <div><a href="https://docs.cpanel.net/cpanel/databases/mysql-database-wizard/" class="transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" target="_blank" rel="nofollow">cPanel - MySQL database wizard</a></div>
+                            <div><a href="https://docs.plesk.com/en-US/obsidian/customer-guide/website-databases.69535/" class="transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" target="_blank" rel="nofollow">Plesk - Website databases</a></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="uploading-the-files">Uploading the files</h3>
+
+                        <p class="bg-blue-300/20 dark:bg-blue-600/20 text-blue-800 dark:text-blue-200 rounded-sm px-4 py-3 mb-4">Before starting to upload the files, please make sure your file explorer has the option to view hidden files turned on. On some operating systems, the dotfiles are hidden by default.</p>
+
+                        <p class="mb-4">Upload what's inside the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Software</code> folder on the web root folder of your domain. This folder is generally called <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">public_html</code>, <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">html</code>, or <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">example.com</code>, but depending on your server's configuration, it might be named differently.</p>
+
+                        <div class="text-sm">
+                            <div class="text-neutral-500 dark:text-neutral-400">Useful resources</div>
+                            <div><a href="https://docs.cpanel.net/cpanel/files/file-manager/#overview" class="transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" target="_blank" rel="nofollow">cPanel - File Manager</a></div>
+                            <div><a href="http://docs.plesk.com/en-US/12.5/customer-guide/websites-and-domains/website-content/uploading-content-with-file-manager.74105/" class="transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" target="_blank" rel="nofollow">Plesk - Uploading content with File Manager</a></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="configuring-the-files">Configuring the files</h3>
+
+                        <p class="mb-4">Set the access permissions (<span class="font-medium">CHMOD</span>) to <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">775</code> to the following files and folders:</p>
+
+                        <ul class="mb-4">
+                            <li class="mb-1">Files
+                                <ul class="list-disc mb-4 pl-6">
+                                    <li class="mb-1">.env</li>
+                                </ul>
+                            </li>
+
+                            <li class="mb-1">Folders
+                                <ul class="list-disc mb-4 pl-6">
+                                    <li class="mb-1">bootstrap/cache</li>
+                                    <li class="mb-1">lang</li>
+                                    <li class="mb-1">public/uploads/brand</li>
+                                    <li class="mb-1">public/uploads/users</li>
+                                    <li class="mb-1">storage</li>
+                                    <li class="mb-1">storage/framework/</li>
+                                    <li class="mb-1">storage/framework/cache</li>
+                                    <li class="mb-1">storage/framework/cache/data</li>
+                                    <li class="mb-1">storage/framework/sessions</li>
+                                    <li class="mb-1">storage/framework/views</li>
+                                    <li class="mb-1">storage/logs</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="text-sm">
+                            <div class="text-neutral-500 dark:text-neutral-400">Useful resources</div>
+                            <div><a href="https://docs.cpanel.net/cpanel/files/file-manager/#update-file-or-folder-permissions" class="transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" target="_blank" rel="nofollow">cPanel - Update file or folder permissions</a></div>
+                            <div><a href="http://docs.plesk.com/en-US/12.5/customer-guide/websites-and-domains/website-content/setting-file-and-directory-access-permissions.70738/" class="transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" target="_blank" rel="nofollow">Plesk - Setting file and directory access permissions</a></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="changing-the-public-directory">Changing the public directory</h3>
+
+                        <p class="mb-4">Configure your web server's document / web root to point to the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">/public</code> directory of the software. For example, if you've uploaded the software in <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">example.com</code> folder, your web directory should be changed to <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">example.com/public</code> folder.</p>
+
+                        <div class="text-sm">
+                            <div class="text-neutral-500 dark:text-neutral-400">Useful resources</div>
+                            <div><a href="https://docs.cpanel.net/cpanel/domains/domains/#new-document-root" class="transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" target="_blank" rel="nofollow">cPanel - New document root</a></div>
+                            <div><a href="https://docs.plesk.com/en-US/obsidian/administrator-guide/77500/" class="transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" target="_blank" rel="nofollow">Plesk - Defining a custom document root</a></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="finishing-the-installation">Finishing the installation</h3>
+                        <ol class="list-decimal pl-6 mb-4">
+                            <li class="mb-1">Go to <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">https://example.com/install</code> and follow the installation wizard to complete the installation.</li>
+
+                            <li class="mb-1">After you've installed the software, login into your user account.</li>
+
+                            <li class="mb-1">Once logged-in, go to <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">https://example.com/admin</code> and activate your <a href="https://help.market.envato.com/hc/en-us/articles/202822600-Where-Is-My-Purchase-Code-" target="_blank" rel="noreferrer" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">License Key</a>.</li>
+                        </ol>
+
+                        <div class="text-sm">
+                            <div class="text-neutral-500 dark:text-neutral-400">Useful resources</div>
+                            <div><a href="https://help.market.envato.com/hc/en-us/articles/202822600-Where-Is-My-Purchase-Code-" target="_blank" rel="noreferrer" class="transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Envato - Retrieving the license key</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-neutral-900/5 dark:border-neutral-100/10 my-12">
+
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="configuration">Configuration</h2>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="cron-job">Cron job</h3>
+
+                        <p class="mb-4">The software requires a cron job task to be set up on your server in order to automate some of its functions.</p>
+
+                        <ol class="list-decimal pl-6 mb-4">
+                            <li class="mb-1">Go to <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Cron job</span>.</li>
+
+                            <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Command</code> field and set up a cron job for it that runs every minute.</li>
+                        </ol>
+
+                        <div class="text-sm">
+                            <div class="text-neutral-500 dark:text-neutral-400">Useful resources</div>
+                            <div><a href="https://docs.cpanel.net/cpanel/advanced/cron-jobs/#add-a-cron-job" class="transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" target="_blank" rel="nofollow">cPanel - Cron jobs</a></div>
+                            <div><a href="https://docs.plesk.com/en-US/obsidian/administrator-guide/server-administration/scheduling-tasks.64993/" class="transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" target="_blank" rel="nofollow">Plesk - Scheduling tasks</a></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="email">Email</h3>
+
+                        <ol class="list-decimal pl-6 mb-4">
+                            <li class="mb-1">Go to <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Email</span>.</li>
+
+                            <li class="mb-1">Change the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Driver</code> field value to <span class="font-medium">SMTP</span>.</li>
+
+                            <li class="mb-1">Fill in the rest of the fields with the SMTP credentials from your SMTP provider.</li>
+                        </ol>
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="authentication">Authentication</h3>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="google">Google</h4>
+
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://console.cloud.google.com/" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Google Cloud Console</a> account.</li>
+
+                                <li class="mb-1">Create a <a href="https://console.cloud.google.com/projectcreate" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">New Project</a>.</li>
+
+                                <li class="mb-1">Go to <a href="https://console.cloud.google.com/apis/dashboard" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">APIs and Services</a>.</li>
+
+                                <li class="mb-1">From the sidebar, go to <a href="https://console.cloud.google.com/apis/credentials/consent" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">OAuth Consent Screen</a> section.</li>
+
+                                <li class="mb-1">Set the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">User Type</code> field value to <span class="font-medium">External</span> and click on <span class="font-medium">Create</span> button.</li>
+
+                                <li class="mb-1">Fill in your app details, and click on <span class="font-medium">Save and continue</span> button.</li>
+
+                                <li class="mb-1">On the <span class="font-medium">Scopes</span> section, click on <span class="font-medium">Add or remove scopes</span> button and select the <span class="font-medium">userinfo.email</span> and <span class="font-medium">userinfo.profile</span> scopes, and complete the remaining steps.</li>
+
+                                <li class="mb-1">From the sidebar, go to <a href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Credentials</a> section.</li>
+
+                                <li class="mb-1">Click on <span class="font-medium">Create credentials</span> button and then select <a href="https://console.cloud.google.com/apis/credentials/oauthclient" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">OAuth client ID</a>.</li>
+
+                                <li class="mb-1">Set the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Application type</code> field value to <span class="font-medium">Web application</span>.</li>
+
+                                <li class="mb-1">On the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Authorized redirect URIs</code> field paste your redirect URL, which can be found in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Authentication <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Google</span>.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Client ID</code> and the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Client secret</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Authentication <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Google</span>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="microsoft">Microsoft</h4>
+
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://portal.azure.com/" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Microsoft Azure</a> account.</li>
+
+                                <li class="mb-1">Go to <a href="https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">App registrations</a> and click on <a href="https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/CreateApplicationBlade/quickStartType~/null/isMSAApp~/false" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">New registration</a> button.</li>
+
+                                <li class="mb-1">Set the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Supported account types</code> field value to <span class="font-medium">Personal Microsoft accounts only</span>.</li>
+
+                                <li class="mb-1">Set the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Platform</code> field to <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Web</code>, and on the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Redirect URI</code> field paste your redirect URL, which can be found in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Authentication <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Microsoft</span>.</li>
+
+                                <li class="mb-1">Go to <a href="https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">App registrations</a>, click on <span class="font-medium">All applications</span> tab, and select your application.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Application (client) ID</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Authentication <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Microsoft</span>.</li>
+
+                                <li class="mb-1">From the sidebar, go to <span class="font-medium">Certificates & secrets</span> section, and then click on the <span class="font-medium">New client secret</span> button.</li>
+
+                                <li class="mb-1">Copy the <span class="font-medium">Client secret</span> <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Value</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Authentication <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Microsoft</span>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="apple">Apple</h4>
+
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://developer.apple.com/account" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Apple developer</a> account.</li>
+
+                                <li class="mb-1">Go to <a href="https://developer.apple.com/account" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Apple Membership</a> section.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Team ID</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Authentication <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Apple</span>.</li>
+
+                                <li class="mb-1">Go to <a href="https://developer.apple.com/account/resources/identifiers/list" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Identifiers</a> and then click on the <a href="https://developer.apple.com/account/resources/identifiers/add/bundleId" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Plus</a> button.</li>
+
+                                <li class="mb-1">Register a new <a href="https://developer.apple.com/account/resources/identifiers/bundleId/add/bundle" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">App ID</a>, with the <span class="font-medium">Sign in with Apple</span> feature enabled under the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Capabilities</code> field.</li>
+
+                                <li class="mb-1">Go to <a href="https://developer.apple.com/account/resources/identifiers/list" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Identifiers</a> section, and then click on the <a href="https://developer.apple.com/account/resources/identifiers/add/bundleId" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Plus</a> button.</li>
+
+                                <li class="mb-1">Register a new <a href="https://developer.apple.com/account/resources/identifiers/serviceId/add/" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Service ID</a>, and then select it from the list.</li>
+
+                                <li class="mb-1">Enable the <span class="font-medium">Sign in with Apple</span> option, and click on <span class="font-medium">Configure</span> button, and on the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Return URLs</code> field paste your redirect URL, which can be found on <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Authentication <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Apple</span>.</li>
+
+                                <li class="mb-1">Copy the <span class="font-medium">Service ID</span> <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Identifier</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Authentication <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Apple</span>.</li>
+
+                                <li class="mb-1">Go to <a href="https://developer.apple.com/account/resources/authkeys/list" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Keys</a> section, and then click on the <a href="https://developer.apple.com/account/resources/identifiers/add/bundleId" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Plus</a> button.</li>
+
+                                <li class="mb-1">Enable the <span class="font-medium">Sign in with Apple</span> option, and click on <span class="font-medium">Configure</span> button, and set the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Primary App ID</code>, and create your key.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Key ID</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Authentication <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Apple</span>.</li>
+
+                                <li class="mb-1">Click on the <span class="font-medium">Download</span> button, and with a text editor open the downloaded file, and copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Private key</code> content in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Authentication <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Apple</span>.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="captcha">Captcha</h3>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="recaptcha">reCAPTCHA</h4>
+
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://www.google.com/recaptcha/admin/create" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Google reCAPTCHA</a> account.</li>
+
+                                <li class="mb-1">Click on <a href="https://www.google.com/recaptcha/admin/create" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Create</a> button to register a new site.</li>
+
+                                <li class="mb-1">Set the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">reCAPTCHA type</code> field value to <span class="font-medium">Challenge (v2)</span>, and then to <span class="font-medium">Invisible reCAPTCHA badge</span>, and fill in the rest of the fields.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Site key</code> and the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Secret key</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Captcha</span>.</li>
+
+                                <li class="mb-1">Change the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Driver</code> field value to <span class="font-medium">reCAPTCHA</span> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Captcha</span>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="hcaptcha">hCaptcha</h4>
+
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://dashboard.hcaptcha.com/login" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">hCaptcha</a> account.</li>
+
+                                <li class="mb-1">Create a new <a href="https://dashboard.hcaptcha.com/sites/new" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Site</a>.</li>
+
+                                <li class="mb-1">Fill all the other fields with the requested information.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Site key</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Captcha</span>.</li>
+
+                                <li class="mb-1">From the <a href="https://dashboard.hcaptcha.com/settings" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Settings</a> page, copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Secret key</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Captcha</span>.</li>
+
+                                <li class="mb-1">Change the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Driver</code> field value to <span class="font-medium">hCaptcha</span> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Captcha</span>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="turnstile">Turnstile</h4>
+
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://dash.cloudflare.com/login" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Cloudflare</a> account.</li>
+
+                                <li class="mb-1">From the sidebar, go to the <span class="font-medium">Turnstile</span> section.</li>
+
+                                <li class="mb-1">Click on <span class="font-medium">Add site</span>.</li>
+
+                                <li class="mb-1">Set the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Widget Mode</code> field value to <span class="font-medium">Invisible</span>, and fill in the rest of the fields.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Site key</code> and the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Secret key</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Captcha</span>.</li>
+
+                                <li class="mb-1">Change the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Driver</code> field value to <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Turnstile</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Captcha</span>.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="payment-processors">Payment processors</h3>
+
+                        <p class="mb-4">
+                            To enable any of the payment processors, an <span class="font-medium">Extended</span> license is required. The payment processors can be enabled from <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors</span>.
+                        </p>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="paypal">PayPal</h4>
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://developer.paypal.com/developer/applications" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">PayPal</a> account.</li>
+
+                                <li class="mb-1">Go to the <a href="https://developer.paypal.com/developer/applications" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">My apps & credentials</a> section, click on <span class="font-medium">Live</span> button and then on the <span class="font-medium">Create app</span> button.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Client ID</code> and <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Secret</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">PayPal</span>.</li>
+
+                                <li class="mb-1">Go to the <a href="https://developer.paypal.com/developer/applications" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">My apps & credentials</a> section, click on <span class="font-medium">Live</span> button and then select your app.</li>
+
+                                <li class="mb-1">Scroll down to <span class="font-medium">LIVE WEBHOOKS</span> and click on the <span class="font-medium">Add webhook</span> button.</li>
+
+                                <li class="mb-1">On the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Webhook URL</code> field paste your webhook URL, this can be found on <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">PayPal</span>.</li>
+
+                                <li class="mb-1">Under the <span class="font-medium">Events types</span> select <span class="font-medium">All events</span> and save your changes.</li>
+
+                                <li class="mb-1">Go to the <a href="https://developer.paypal.com/developer/applications" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">My apps & credentials</a> section, click on <span class="font-medium">Live</span> button and then select your app.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Webhook ID</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">PayPal</span>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="stripe">Stripe</h4>
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://dashboard.stripe.com/login" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Stripe</a> account.</li>
+
+                                <li class="mb-1">From the menu bar, go to the <span class="font-medium">Developers</span> section of the Stripe dashboard and click on <a href="https://dashboard.stripe.com/account/apikeys" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">API Keys</a>.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Publishable key</code> and <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Secret key</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Stripe</span>.</li>
+
+                                <li class="mb-1">From the menu bar, go to the <span class="font-medium">Developers</span> section of the Stripe dashboard and click on <a href="https://dashboard.stripe.com/account/webhooks" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Webhooks</a>.</li>
+
+                                <li class="mb-1">Click on <span class="font-medium">Add a new endpoint</span>.</li>
+
+                                <li class="mb-1">On the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Endpoint URL</code> field paste your webhook URL, which can be found on <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Stripe</span>.</li>
+
+                                <li class="mb-1">On the <span class="font-medium">events to listen to</span> field, click on <span class="font-medium">Select all events</span>, and click on <span class="font-medium">Add events</span> button.</li>
+
+                                <li class="mb-1">Click on <span class="font-medium">Add endpoint</span> button to create your webhook endpoint.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Signing secret</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processor <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Stripe</span>.</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="mollie">Mollie</h4>
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://my.mollie.com/dashboard/" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Mollie</a> account.</li>
+
+                                <li class="mb-1">From the menu bar, go to the <span class="font-medium">Developers</span> section and click on <a href="https://my.mollie.com/dashboard/developers/api-keys" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">API keys</a>.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">API key</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Mollie</span>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="paddle">Paddle</h4>
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://vendors.paddle.com" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Paddle Billing</a> account.</li>
+
+                                <li class="mb-1">From the menu bar, go to the <span class="font-medium">Developer Tools</span> and then click on <a href="https://vendors.paddle.com/authentication-v2" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Authentication</a>.</li>
+
+                                <li class="mb-1">From the <span class="font-medium">API keys</span> tab, click on the <span class="font-medium">New API key</span> button, enable <span class="font-medium">All</span> permissions for <span class="font-medium">Write</span>, and then save and copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">API key</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Paddle</span>.</li>
+
+                                <li class="mb-1">From the menu bar, go to the <span class="font-medium">Developer Tools</span> and then click on <a href="https://vendors.paddle.com/authentication-v2" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Authentication</a>.</li>
+
+                                <li class="mb-1">From the <span class="font-medium">Client-side tokens</span> tab, click on the <span class="font-medium">New Client-side token</span> button, and then save and copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Token</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Paddle</span>.</li>
+
+                                <li class="mb-1">From the menu bar, go to the <span class="font-medium">Developer Tools</span> and then click on <a href="https://vendors.paddle.com/notifications-v2" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Notifications</a>.</li>
+
+                                <li class="mb-1">Click on <span class="font-medium">New Destination</span>.</li>
+
+                                <li class="mb-1">On the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">URL</code> field paste your webhook URL, which can be found on <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Paddle</span>.</li>
+
+                                <li class="mb-1">On the <span class="font-medium">Events</span> field, click on <span class="font-medium">Select all events</span>.</li>
+
+                                <li class="mb-1">Save the <span class="font-medium">Destination</span>, click on <span class="font-medium">Edit</span> and copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Secret key</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processor <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Paddle</span>.</li>
+
+                                <li class="mb-1">From the menu bar, go to the <span class="font-medium">Checkout</span> and then click on <a href="https://vendors.paddle.com/checkout-settings" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Checkout settings</a>.</li>
+
+                                <li class="mb-1">On the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Default payment link</code> field add your website URL.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="razorpay">Razorpay</h4>
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://dashboard.razorpay.com/" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Razorpay</a> account.</li>
+
+                                <li class="mb-1">From the menu bar, go to the <span class="font-medium">Settings</span> section of the Razorpay dashboard and click on <a href="https://dashboard.razorpay.com/app/keys" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">API Keys</a>.</li>
+
+                                <li class="mb-1">Click on <span class="font-medium">Generate key</span> button.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Key ID</code> and <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Key secret</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Razorpay</span>.</li>
+
+                                <li class="mb-1">From the menu bar, go to the <span class="font-medium">Settings</span> section of the Razorpay dashboard and click on <a href="https://dashboard.razorpay.com/app/webhooks" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Webhooks</a>.</li>
+
+                                <li class="mb-1">Click on <span class="font-medium">Add new webhook</span>.</li>
+
+                                <li class="mb-1">On the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Webhook URL</code> field paste your webhook URL, which can be found on <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Razorpay</span>.</li>
+
+                                <li class="mb-1">On the <span class="font-medium">Secret</span> field add your own secret passcode.</li>
+
+                                <li class="mb-1">On the <span class="font-medium">Active events</span> field select all the <span class="font-medium">Payment events</span> and <span class="font-medium">Subscription events</span>.</li>
+
+                                <li class="mb-1">Click on <span class="font-medium">Create webhook</span> button to create your webhook endpoint.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Secret</code> passcode in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processor <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Razorpay</span>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="paystack">Paystack</h4>
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://dashboard.paystack.com/" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Paystack</a> account.</li>
+
+                                <li class="mb-1">From the menu bar, go to the <span class="font-medium">Settings</span> section of the Paystack dashboard and click on <a href="https://dashboard.paystack.com/#/settings/developer" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">API Keys & Webhooks</a>.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Public key</code> and <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Secret key</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Paystack</span>.</li>
+
+                                <li class="mb-1">From the menu bar, go to the <span class="font-medium">Settings</span> section of the Paystack dashboard and click on <a href="https://dashboard.paystack.com/#/settings/developer" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">API Keys & Webhooks</a>.</li>
+
+                                <li class="mb-1">On the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Webhook URL</code> field paste your webhook URL, which can be found on <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Paystack</span>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="coinbase">Coinbase</h4>
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://commerce.coinbase.com/signin" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Coinbase</a> account.</li>
+
+                                <li class="mb-1">From the sidebar, go to the <span class="font-medium">Settings</span> section of the Coinbase dashboard and scroll down to <span class="font-medium">API keys</span>.</li>
+
+                                <li class="mb-1">Create an API key, and copy the key in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Coinbase</span>.</li>
+
+                                <li class="mb-1">From the sidebar, go to the <span class="font-medium">Settings</span> section of the Coinbase dashboard and scroll down to <span class="font-medium">Webhook subscriptions</span>.</li>
+
+                                <li class="mb-1">Click on <span class="font-medium">Add an endpoint.</span></li>
+
+                                <li class="mb-1">On the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Endpoint URL</code> field paste your webhook URL, this can be found on <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Coinbase</span>.</li>
+
+                                <li class="mb-1">From the sidebar, go to the <span class="font-medium">Settings</span> section of the Coinbase dashboard and scroll down to <span class="font-medium">Webhook subscriptions</span>.</li>
+
+                                <li class="mb-1">Click on <span class="font-medium">Show shared secret.</span></li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Webhook shared secret</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Coinbase</span>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="crypto.com">Crypto.com</h4>
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://merchant.crypto.com/" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Crypto.com</a> account.</li>
+
+                                <li class="mb-1">From the menu bar, go to the <span class="font-medium">Integrations</span> section of the Crypto.com dashboard and click on <a href="https://merchant.crypto.com/integration/api_keys" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">API Keys</a>.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Publishable key</code> and <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Secret key</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Crypto.com</span>.</li>
+
+                                <li class="mb-1">From the menu bar, go to the <span class="font-medium">Integrations</span> section of the Crypto.com dashboard and click on <a href="https://merchant.crypto.com/integration/webhooks" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Webhooks</a>.</li>
+
+                                <li class="mb-1">Click on <span class="font-medium">Add webhook</span> button.</li>
+
+                                <li class="mb-1">On the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Payload URL</code> field paste your webhook URL, which can be found on <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processors <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Crypto.com</span>.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Signature secret</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Payment processor <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Crypto.com</span>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="bank">Bank</h4>
+                            <ul class="list-disc mb-4 pl-6">
+                                <li class="mb-1">All fields are optional.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="storage">Storage</h3>
+
+                        <p class="bg-blue-300/20 dark:bg-blue-600/20 text-blue-800 dark:text-blue-200 rounded-sm px-4 py-3 mb-4">When migrating from <span class="font-medium">Local</span> storage to an <span class="font-medium">S3 filesystem</span> storage, you must upload what's inside the <span class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">/public/uploads</span> folder from your server to your <span class="font-medium">S3 filesystem</span> storage.</p>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="amazon-s3">Amazon S3</h4>
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://console.aws.amazon.com/console/home" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Amazon Web Services</a> account.</li>
+
+                                <li class="mb-1">Go to the <a href="https://console.aws.amazon.com/s3/home" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Amazon S3</a> section, click on <a href="https://console.aws.amazon.com/s3/bucket/create" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Create bucket</a> button, fill in the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Bucket name</code> field, set the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Object Ownership</code> field to <span class="font-medium">ACLs enabled</span>, and uncheck the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Block Public Access</code> field (you'll be prompted to agree with the changes), and then click on the <span class="font-medium">Create bucket</span> button.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Bucket</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Storage</span>.</li>
+
+                                <li class="mb-1">Go to the <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Amazon S3 regions</a> section and copy your <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Region</code> and <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Endpoint URL</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Storage</span>.</li>
+
+                                <li class="mb-1">Go to the <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Security credentials</a> section, click on the <a href="https://console.aws.amazon.com/iam/home#/security_credentials/access-key-wizard" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Create access key</a> button and create your access key.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Access Key</code> and <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Secret Key</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Storage</span>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="digitalocean-spaces">DigitalOcean Spaces</h4>
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://cloud.digitalocean.com/login" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">DigitalOcean</a> account.</li>
+
+                                <li class="mb-1">Go to the <a href="https://cloud.digitalocean.com/spaces/new?i=6984ea" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Spaces Object Storage</a> section, click on <a href="https://cloud.digitalocean.com/spaces/new?i=6984ea" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Create Spaces Bucket</a> button, fill in the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Bucket Name</code> field, and then click on the <span class="font-medium">Create a Spaces Bucket</span> button.</li>
+
+                                <li class="mb-1">Extract the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">&lt;bucket&gt;</code> value and the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">&lt;region&gt;</code> value from the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">https://&lt;bucket&gt;.&lt;region&gt;.digitaloceanspaces.com</code> URL of your <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Origin Endpoint</code> field, and copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Bucket</code> value and <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Region</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Storage</span>.</li>
+
+                                <li class="mb-1">Remove the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">&lt;bucket&gt;</code> value from the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">https://&lt;bucket&gt;.&lt;region&gt;.digitaloceanspaces.com</code> URL of your <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Origin Endpoint</code> field, and copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Origin Endpoint</code> without the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">&lt;bucket&gt;</code> value in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Storage</span>.</li>
+
+                                <li class="mb-1">Go to the <a href="https://cloud.digitalocean.com/account/api/spaces" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Spaces access keys</a> section, click on <a href="https://cloud.digitalocean.com/account/api/spaces/new" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Generate New Key</a> button, fill in the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">name</code> field, and then click on the <span class="font-medium">Create Access Key</span> button.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Access Key</code> and <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Secret Key</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Storage</span>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24" id="backblaze-b2">Backblaze B2</h4>
+                            <ol class="list-decimal pl-6 mb-4">
+                                <li class="mb-1">Login into your <a href="https://secure.backblaze.com/user_signin.htm" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Backblaze</a> account.</li>
+
+                                <li class="mb-1">Go to the <a href="https://secure.backblaze.com/b2_buckets.htm" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Buckets</a> section, click on <span class="font-medium">Create a bucket</span> button, fill in the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Unique Bucket Name</code> field, and set the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Files in Bucket</code> field to <span class="font-medium">Public</span>, and then click on the <span class="font-medium">Create a bucket</span> button.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Unique Bucket Name</code> and <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Endpoint URL</code> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Storage</span>.</li>
+
+                                <li class="mb-1">Extract the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">&lt;region&gt;</code> value from the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">s3.&lt;region&gt;.backblazeb2.com</code> URL of your <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Endpoint URL</code> field, and copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Region</code> value in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Storage</span>.</li>
+
+                                <li class="mb-1">Go to the <a href="https://secure.backblaze.com/b2_buckets.htm" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Application Keys</a> section, click on <span class="font-medium">Add a New Application Key</span> button, set the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Allow access to Bucket</code> field to your bucket, and the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Type of Access</code> field to <span class="font-medium">Read and Write</span>, and then click on the <span class="font-medium">Create new key</span> button.</li>
+
+                                <li class="mb-1">Copy the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">keyID</code> which represents the <span class="font-medium">Application key</span> and the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">applicationKey</code> which represents the <span class="font-medium">Secret key</span> in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Storage</span>.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-neutral-900/5 dark:border-neutral-100/10 my-12">
+
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="update">Update</h2>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="backing-up">Backing up</h3>
+
+                        <p class="bg-amber-400/20 dark:bg-amber-600/20 text-amber-800 dark:text-amber-400 rounded-sm px-4 py-3 mb-4">Before updating the software, you must make a complete backup of your website.</p>
+
+                        <p class="bg-amber-400/20 dark:bg-amber-600/20 text-amber-800 dark:text-amber-400 rounded-sm px-4 py-3 mb-4">If you've made any modifications to the software's files, your changes will be lost.
+                    </div>
+
+                    <div class="mb-12">
+                        <h3 class="text-base sm:text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="updating">Updating</h3>
+
+                        <p class="bg-red-400/20 dark:bg-red-600/20 text-red-800 dark:text-red-400 rounded-sm px-4 py-3 mb-4 mt-4">
+                            Version 32 brings Timezone support for Stats pages, which required a complete rework of the way we're storing the Stats, as a result, upgrading to this version will remove all previous Stats. This is a big step forward, as in the future it will also allow us to correlate different datasets, to provide more in-depth Stats, which wasn't possible with the old database structure.
+                        </p>
+
+                        <ol class="list-decimal pl-6 mb-4">
+                            <li class="mb-1">Make a backup of the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">.env</code> config file located on your server.</li>
+                            <li class="mb-1">Upload and replace all the files on your server with what's inside the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">Software</code> folder.</li>
+                            <li class="mb-1">Restore your <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">.env</code> config file on your server.</li>
+                            <li class="mb-1">Go to <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">https://example.com/update</code> and follow the update wizard.<sup>1</sup></li>
+                        </ol>
+
+                        <ol class="list-decimal pl-6 mb-4 text-sm text-neutral-500 dark:text-neutral-400">
+                            <li class="mb-1">Updates that do not have database changes, will not show up in the update wizard.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <hr class="border-neutral-900/5 dark:border-neutral-100/10 my-12">
+
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-neutral-50 mb-4 scroll-mt-24" id="faq">FAQ</h2>
+
+                    <ul class="space-y-12">
+                        <li>
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24">I have a support inquiry, a question or a problem, how can I contact you?</h4>
+                            <div>You can contact us <a href="../contact" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">here</a>.</div>
+                        </li>
+
+                        <li>
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24">What hosting do you recommend?</h4>
+                            <div>We recommend using <a href="https://m.do.co/c/a2590f642b71" target="_blank" rel="nofollow" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">DigitalOcean</a>, as they offer great performance and flexibility at an affordable price.</div>
+                        </li>
+
+                        <li>
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24">Is installation included in the price?</h4>
+                            <div>No, installation is not included. We offer installation services for an extra fee, please consult our <a href="../services" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" data-scroll-to="75">Services</a> section for more details.</div>
+                        </li>
+
+                        <li>
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24">How can I translate my website?</h4>
+                            <div>Make a copy of the default <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">en.json</code> language file found in <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">/lang</code> folder, and change it according to your needs.</div>
+                        </li>
+
+                        <li>
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24">Where can I add my custom CSS code?</h4>
+                            <div>You can add your custom CSS code in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Appearance <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Custom CSS</span> field.</div>
+                        </li>
+
+                        <li>
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24">Where can I add my custom JS code?</h4>
+                            <div>You can add your custom JS code in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">General <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Custom JS</span> field.</div>
+                        </li>
+
+                        <li>
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24">Where can I add my advertising unit code?</h4>
+                            <div>Advertising unit code can be added in the HTML template files.</div>
+                        </li>
+
+                        <li>
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24">Where do I find the HTML template files?</h4>
+                            <div>The HTML template files can be found in the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">/resources/views</code> folder. For example to edit the home page, you would edit the <code class="inline-block text-xs px-1 py-0.5 bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-bold rounded-sm">/resources/views/home/index.blade.php</code> file.</div>
+                        </li>
+
+                        <li>
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24">How can I create a custom page?</h4>
+                            <div>You can create custom page in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Pages</span>.</div>
+                        </li>
+
+                        <li>
+                            <h4 class="text-neutral-900 dark:text-neutral-50 font-semibold mb-2 scroll-mt-24">Where can I set up my Terms of Service, Privacy Policy, and Cookies Policy URL pages?</h4>
+                            <div>You can paste the links of your legal pages in <span class="inline-flex font-medium items-center">Admin <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Settings <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg></span> <span class="inline-flex font-medium items-center">Legal</span>.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="w-full border-t border-neutral-900/5 dark:border-neutral-100/10">
+        <div class="max-w-screen-lg mx-auto px-4">
+            <nav class="py-12">
+                <ul class="flex lg:space-x-10 lg:flex-row flex-col lg:space-y-0 space-y-6">
+                    <li>
+                        <a href="../index.html" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Products</a>
+                    </li>
+
+                    <li>
+                        <a href="../services" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Services</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="../newsletter" role="button">Newsletter</a>
+                    </li>
+
+                    <li>
+                        <a href="../terms-of-service" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Terms of Service</a>
+                    </li>
+
+                    <li>
+                        <a href="../contact" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="text-neutral-500 mt-4">© 2025 Lunatio. All rights reserved.</div>
+            </nav>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

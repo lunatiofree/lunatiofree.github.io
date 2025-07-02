@@ -1,0 +1,843 @@
+
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>phpAnalytics - Web Analytics Software - Lunatio</title>
+
+    <link rel="icon" type="image/png" href="https://lunatio.de/favicon.png">
+
+    <meta property="og:title" content="phpAnalytics - Web Analytics Software">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lunatio.de/phpanalytics">
+    <meta property="og:image" content="https://lunatio.de/uploads/social/phpanalytics.png">
+    <meta property="og:description" content="Privacy focused web analytics software with realtime reports about traffic sources, visitor locations, and device technologies used.">
+    <meta property="og:site_name" content="Lunatio">
+
+    <!-- Scripts -->
+    <script src="https://lunatio.de/assets/js/app.js" defer></script>
+
+    <!-- Styles -->
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet preconnect">
+    <link href="https://lunatio.de/assets/css/app.css" rel="stylesheet">
+</head>
+
+<body class="antialiased flex flex-col min-h-full text-neutral-700 dark:text-neutral-300 bg-white dark:bg-black selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+<div class="w-full top-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-sm relative">
+    <div class="border-b border-neutral-900/5 dark:border-neutral-100/10">
+        <nav class="max-w-screen-lg	mx-auto p-4 flex flex-row flex-wrap">
+            <a class="flex items-center text-neutral-700 hover:text-black dark:text-neutral-200 dark:hover:text-white -m-4 p-4" href="https://lunatio.de">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" class="w-6 h-6"><path d="M70,36.52A33.48,33.48,0,1,1,36.52,70,33.52,33.52,0,0,1,70,36.52m0-15A48.48,48.48,0,1,0,118.48,70,48.47,48.47,0,0,0,70,21.52Z" style="fill:currentColor"/><path d="M77.94,110.21A87.61,87.61,0,0,0,87.6,70a87.61,87.61,0,0,0-9.66-40.21,41,41,0,0,1,0,80.42Z" style="fill:currentColor"/><path d="M91.69,44.51a33.45,33.45,0,0,1,0,51A95.91,95.91,0,0,0,95.1,70a95.91,95.91,0,0,0-3.41-25.49M70,21.52a50.6,50.6,0,0,0-5.8.35A80.43,80.43,0,0,1,80.1,70a80.43,80.43,0,0,1-15.9,48.13,50.6,50.6,0,0,0,5.8.35,48.48,48.48,0,0,0,0-97Z" style="fill:currentColor"/><path d="M118.49,26.71A65,65,0,1,0,135,70,64.87,64.87,0,0,0,118.49,26.71Z" style="fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:10px"/></svg>
+
+                <div class="ml-2 text-lg font-medium">Lunatio</div>
+            </a>
+
+            <button class="ml-auto lg:hidden transition cursor-pointer text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" data-trigger="menu" data-target="#primary-menu" aria-label="Primary menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="items-center ml-0 lg:ml-auto lg:flex basis-full lg:basis-auto flex hidden" id="primary-menu">
+                <ul class="flex flex-col lg:flex-row mt-6 lg:mt-0 lg:space-x-10 space-y-6 lg:space-y-0">
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de" role="button">Products</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de/services" role="button">Services</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 flex items-center transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de/newsletter" role="button">Newsletter</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de/contact" role="button">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="w-full sticky top-0 z-50 bg-white/90 dark:bg-black/80 backdrop-blur-sm">
+    <div class="border-b border-neutral-900/5 dark:border-neutral-100/10">
+        <nav class="max-w-screen-lg	mx-auto p-4 flex flex-row flex-wrap">
+            <a href="https://lunatio.de/phpanalytics" class="text-lg font-bold text-neutral-700 hover:text-black dark:text-neutral-200 dark:hover:text-white -m-4 p-4">phpAnalytics</a>
+
+            <button class="ml-auto lg:hidden transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" data-trigger="menu" data-target="#product-menu" aria-label="Product menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="items-center ml-0 lg:ml-auto lg:flex basis-full lg:basis-auto flex hidden" id="product-menu">
+                <ul class="flex flex-col lg:flex-row mt-6 lg:mt-0 lg:space-x-10 space-y-6 lg:space-y-0">
+                    <li>
+                        <a class="p-2 -m-2 transition text-black hover:text-black dark:text-white dark:hover:text-white" href="https://lunatio.de/phpanalytics" role="button">Overview</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de/phpanalytics/changelog" role="button">Changelog</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de/phpanalytics/documentation" role="button">Documentation</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 " href="https://phpanalytics.lunatio.de" target="_blank" rel="nofollow" role="button">
+                            Demo
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 " href="https://1.envato.market/phpanalytics-regular" target="_blank" rel="nofollow" role="button">
+                            Buy
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="flex flex-col flex-auto">
+    <div class="max-w-screen-lg flex-auto mx-auto flex-fill px-4 relative py-16">
+        <div class="bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden w-full mb-12">
+            <div class="p-8 lg:p-12 z-10 relative">
+                <h1 class="text-blue-500 dark:text-blue-400 font-semibold text-lg sm:text-xl mb-3">phpAnalytics</h1>
+
+                <h2 class="text-4xl sm:text-5xl mb-4 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                    Web Analytics Software
+                </h2>
+
+                <p class="mb-2 text-lg lg:text-xl text-neutral-500 dark:text-neutral-400">
+                    Privacy focused web analytics software with realtime reports about traffic sources, visitor locations, and device technologies used.
+                </p>
+
+                <div class="flex items-center flex-wrap">
+                    <div class="inline-flex items-center mt-2 mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-400 dark:text-yellow-500 fill-current" height="20" width="20"><path d="M7.021 16.688Q6.521 17.083 5.99 16.708Q5.458 16.333 5.646 15.729L6.792 12L3.875 9.917Q3.354 9.542 3.552 8.938Q3.75 8.333 4.396 8.333H8L9.167 4.458Q9.271 4.146 9.5 3.99Q9.729 3.833 10 3.833Q10.271 3.833 10.5 3.99Q10.729 4.146 10.833 4.458L12 8.333H15.604Q16.25 8.333 16.448 8.938Q16.646 9.542 16.125 9.917L13.208 12L14.354 15.729Q14.542 16.333 14.01 16.708Q13.479 17.083 12.979 16.688L10 14.417Z"/></svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-400 dark:text-yellow-500 fill-current" height="20" width="20"><path d="M7.021 16.688Q6.521 17.083 5.99 16.708Q5.458 16.333 5.646 15.729L6.792 12L3.875 9.917Q3.354 9.542 3.552 8.938Q3.75 8.333 4.396 8.333H8L9.167 4.458Q9.271 4.146 9.5 3.99Q9.729 3.833 10 3.833Q10.271 3.833 10.5 3.99Q10.729 4.146 10.833 4.458L12 8.333H15.604Q16.25 8.333 16.448 8.938Q16.646 9.542 16.125 9.917L13.208 12L14.354 15.729Q14.542 16.333 14.01 16.708Q13.479 17.083 12.979 16.688L10 14.417Z"/></svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-400 dark:text-yellow-500 fill-current" height="20" width="20"><path d="M7.021 16.688Q6.521 17.083 5.99 16.708Q5.458 16.333 5.646 15.729L6.792 12L3.875 9.917Q3.354 9.542 3.552 8.938Q3.75 8.333 4.396 8.333H8L9.167 4.458Q9.271 4.146 9.5 3.99Q9.729 3.833 10 3.833Q10.271 3.833 10.5 3.99Q10.729 4.146 10.833 4.458L12 8.333H15.604Q16.25 8.333 16.448 8.938Q16.646 9.542 16.125 9.917L13.208 12L14.354 15.729Q14.542 16.333 14.01 16.708Q13.479 17.083 12.979 16.688L10 14.417Z"/></svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-400 dark:text-yellow-500 fill-current" height="20" width="20"><path d="M7.021 16.688Q6.521 17.083 5.99 16.708Q5.458 16.333 5.646 15.729L6.792 12L3.875 9.917Q3.354 9.542 3.552 8.938Q3.75 8.333 4.396 8.333H8L9.167 4.458Q9.271 4.146 9.5 3.99Q9.729 3.833 10 3.833Q10.271 3.833 10.5 3.99Q10.729 4.146 10.833 4.458L12 8.333H15.604Q16.25 8.333 16.448 8.938Q16.646 9.542 16.125 9.917L13.208 12L14.354 15.729Q14.542 16.333 14.01 16.708Q13.479 17.083 12.979 16.688L10 14.417Z"/></svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-400 dark:text-yellow-500 fill-current" height="20" width="20"><path d="M7.021 16.688Q6.521 17.083 5.99 16.708Q5.458 16.333 5.646 15.729L6.792 12L3.875 9.917Q3.354 9.542 3.552 8.938Q3.75 8.333 4.396 8.333H8L9.167 4.458Q9.271 4.146 9.5 3.99Q9.729 3.833 10 3.833Q10.271 3.833 10.5 3.99Q10.729 4.146 10.833 4.458L12 8.333H15.604Q16.25 8.333 16.448 8.938Q16.646 9.542 16.125 9.917L13.208 12L14.354 15.729Q14.542 16.333 14.01 16.708Q13.479 17.083 12.979 16.688L10 14.417Z"/></svg>
+                    </div>
+
+                    <div class="mt-2">
+                        <span class="font-medium">Rated 5 stars</span> <span class="text-neutral-500 dark:text-neutral-400">on</span> <a href="https://codecanyon.net/item/phpanalytics-web-analytics-platform/reviews/29568779" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" target="_blank" rel="nofollow">Envato</a>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex flex-wrap">
+                    <a href="https://1.envato.market/phpanalytics-regular" target="_blank" rel="nofollow" class="mr-4 mt-4 font-medium inline-flex items-center justify-center py-2.5 px-5 rounded-full text-white dark:text-black outline-none focus:ring-4 focus:ring-blue-600/30 dark:focus:ring-blue-400/30 transition bg-blue-500 hover:bg-blue-600 dark:bg-blue-400 dark:hover:bg-blue-300 text-base">
+                        Buy now
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                    </a>
+
+                    <a href="https://phpanalytics.lunatio.de" target="_blank" rel="nofollow" class="mt-4 font-medium inline-flex items-center justify-center py-2.5 px-5 rounded-full outline-none focus:ring-4 focus:ring-blue-600/30 dark:focus:ring-blue-400/30 transition text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 text-base">
+                        Demo
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 -mb-24 md:-mb-36">
+                <div class="col-span-9">
+                    <picture>
+                        <source srcset="https://lunatio.de/uploads/phpanalytics/stats-overview-dark.png" media="(prefers-color-scheme: dark)">
+
+                        <img src="https://lunatio.de/uploads/phpanalytics/stats-overview.png" class="z-0 rounded-lg md:rounded-xl rotate-[-10deg] shadow-2xl [image-rendering:-webkit-optimize-contrast] border border-neutral-900/5 dark:border-neutral-100/10" width="3024" height="1965" alt="phpAnalytics stats overview">
+                    </picture>
+                </div>
+
+                <div class="col-span-3">
+                    <picture>
+                        <source srcset="https://lunatio.de/uploads/phpanalytics/stats-overview-mobile-dark.png" media="(prefers-color-scheme: dark)">
+
+                        <img src="https://lunatio.de/uploads/phpanalytics/stats-overview-mobile.png" width="1242" height="2688" class="z-0 rounded-lg md:rounded-xl rotate-[-10deg] shadow-2xl [image-rendering:-webkit-optimize-contrast] border border-neutral-900/5 dark:border-neutral-100/10" alt="phpAnalytics stats overview mobile">
+                    </picture>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-mt-24" id="analytics">
+            <div class="bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden w-full mb-12">
+                <div class="p-8 lg:p-12 z-10 relative">
+                    <h2 class="text-blue-500 dark:text-blue-400 font-semibold text-base sm:text-lg mb-2 uppercase">
+                        Tracking
+                    </h2>
+
+                    <h3 class="text-3xl sm:text-4xl mb-4 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                        Privacy focused, realtime tracking.
+                    </h3>
+
+                    <p class="text-base lg:text-lg text-neutral-500 dark:text-neutral-400 mb-12">
+                        Extremely lightweight tracking code to monitor your website's visitors in realtime, without storing any personal information, cookies, or fingerprints.
+                    </p>
+
+                    <div class="grid gap-8 md:gap-12 grid-cols-1 md:grid-cols-3">
+                        <div class="flex flex-col">
+                            <div>
+                                <div class="bg-blue-500 dark:bg-blue-400 text-white dark:text-black w-12 h-12 flex justify-center items-center rounded-3xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" height="24" width="24"><path d="M12 15Q13.25 15 14.125 14.125Q15 13.25 15 12Q15 10.75 14.125 9.875Q13.25 9 12 9Q10.75 9 9.875 9.875Q9 10.75 9 12Q9 13.25 9.875 14.125Q10.75 15 12 15ZM12 22Q9.925 22 8.1 21.212Q6.275 20.425 4.925 19.075Q3.575 17.725 2.788 15.9Q2 14.075 2 12Q2 9.925 2.788 8.1Q3.575 6.275 4.925 4.925Q6.275 3.575 8.1 2.787Q9.925 2 12 2Q14.075 2 15.9 2.787Q17.725 3.575 19.075 4.925Q20.425 6.275 21.212 8.1Q22 9.925 22 12Q22 14.075 21.212 15.9Q20.425 17.725 19.075 19.075Q17.725 20.425 15.9 21.212Q14.075 22 12 22ZM12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12ZM12 20Q15.325 20 17.663 17.663Q20 15.325 20 12Q20 8.675 17.663 6.337Q15.325 4 12 4Q8.675 4 6.338 6.337Q4 8.675 4 12Q4 15.325 6.338 17.663Q8.675 20 12 20Z"/></svg>
+                                </div>
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg mt-4">
+                                    Realtime
+                                </div>
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Track which pages are being accessed in realtime.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <div>
+                                <div class="bg-blue-500 dark:bg-blue-400 text-white dark:text-black w-12 h-12 flex justify-center items-center rounded-3xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" height="24" width="24"><path d="M12 22Q8.525 21.125 6.263 18.012Q4 14.9 4 11.1V5L12 2L20 5V11.1Q20 14.9 17.738 18.012Q15.475 21.125 12 22ZM12 19.9Q14.425 19.15 16.05 16.938Q17.675 14.725 17.95 12H12V4.125L6 6.375V11.1Q6 11.375 6 11.55Q6 11.725 6.05 12H12Z"/></svg>
+                                </div>
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg mt-4">
+                                    Private
+                                </div>
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    No IP tracking, no fingerprinting, and no cookies.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <div>
+                                <div class="bg-blue-500 dark:bg-blue-400 text-white dark:text-black w-12 h-12 flex justify-center items-center rounded-3xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current" height="24" width="24"><path d="M10 21 11 14H7.5Q7.125 14 7.037 13.8Q6.95 13.6 7.15 13.25L13 3H14L13 10H16.5Q16.875 10 16.962 10.2Q17.05 10.4 16.85 10.75L11 21Z"/></svg>
+                                </div>
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg mt-4">
+                                    Lightweight
+                                </div>
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Super lightweight tracking code, less than 1kb in size.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 -mb-24 md:-mb-40 lg:-mb-56">
+                        <picture>
+                            <source srcset="https://lunatio.de/uploads/phpanalytics/stats-realtime-dark.png" media="(prefers-color-scheme: dark)">
+
+                            <img src="https://lunatio.de/uploads/phpanalytics/stats-realtime.png" class="z-0 rounded-lg md:rounded-xl shadow-2xl [image-rendering:-webkit-optimize-contrast] border border-neutral-900/5 dark:border-neutral-100/10" width="3024" height="1965" loading="lazy" alt="phpAnalytics stats realtime">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-mt-24" id="shortener">
+            <div class="bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden w-full mb-12">
+                <div class="p-8 lg:p-12 z-10 relative">
+                    <h2 class="text-blue-500 dark:text-blue-400 font-semibold text-base sm:text-lg mb-2 uppercase">
+                        Analytics
+                    </h2>
+
+                    <h3 class="text-3xl sm:text-4xl mb-4 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                        Advanced web analytics.
+                    </h3>
+
+                    <p class="text-base lg:text-lg text-neutral-500 dark:text-neutral-400 mb-12">
+                        Learn where your traffic is coming from, what's the location of your  visitors, and what technology they're using, through comprehensive and insightful reports.
+                    </p>
+
+                    <div class="grid gap-8 md:gap-12 grid-cols-1 md:grid-cols-3">
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" height="24" width="24"><path d="M7 17H9V10H7ZM11 17H13V7H11ZM15 17H17V13H15ZM5 21Q4.175 21 3.587 20.413Q3 19.825 3 19V5Q3 4.175 3.587 3.587Q4.175 3 5 3H19Q19.825 3 20.413 3.587Q21 4.175 21 5V19Q21 19.825 20.413 20.413Q19.825 21 19 21ZM5 19H19Q19 19 19 19Q19 19 19 19V5Q19 5 19 5Q19 5 19 5H5Q5 5 5 5Q5 5 5 5V19Q5 19 5 19Q5 19 5 19ZM5 19Q5 19 5 19Q5 19 5 19V5Q5 5 5 5Q5 5 5 5Q5 5 5 5Q5 5 5 5V19Q5 19 5 19Q5 19 5 19Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Overview
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Comprehensive website statistics overview.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" height="24" width="24"><path d="M4 20Q3.175 20 2.588 19.413Q2 18.825 2 18V6Q2 5.175 2.588 4.588Q3.175 4 4 4H20Q20.825 4 21.413 4.588Q22 5.175 22 6V18Q22 18.825 21.413 19.413Q20.825 20 20 20ZM4 12.5H14.5V9H4ZM14.5 18V14.5H4V18Q4 18 4 18Q4 18 4 18ZM16.5 18H20Q20 18 20 18Q20 18 20 18V9H16.5Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Behavior
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    The best performing website pages.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" height="24" width="24"><path d="M3,3h5v4l4,4h3.2c0.2-0.6,0.6-1.1,1.1-1.4C16.8,9.2,17.4,9,18,9c0.8,0,1.5,0.3,2.1,0.9S21,11.2,21,12s-0.3,1.5-0.9,2.1 S18.8,15,18,15c-0.6,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.9-0.9-1.1-1.4H12l-4,4v4H3v-5h3l4-4L6,8H3V3z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Acquisitions
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Channels through which visitors are acquired.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" height="24" width="24"><path d="M15 21 9 18.9 4.35 20.7Q3.85 20.9 3.425 20.587Q3 20.275 3 19.75V5.75Q3 5.425 3.188 5.175Q3.375 4.925 3.7 4.8L9 3L15 5.1L19.65 3.3Q20.15 3.1 20.575 3.412Q21 3.725 21 4.25V18.25Q21 18.575 20.812 18.825Q20.625 19.075 20.3 19.2ZM14 18.55V6.85L10 5.45V17.15ZM16 18.55 19 17.55V5.7L16 6.85ZM5 18.3 8 17.15V5.45L5 6.45ZM16 6.85V18.55ZM8 5.45V17.15Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Geographic
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Visitors location, down to the city level.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" height="24" width="24"><path d="M2 20V17H4V6Q4 5.175 4.588 4.588Q5.175 4 6 4H21V6H6Q6 6 6 6Q6 6 6 6V17H12V20ZM15 20Q14.575 20 14.288 19.712Q14 19.425 14 19V9Q14 8.575 14.288 8.287Q14.575 8 15 8H21Q21.425 8 21.712 8.287Q22 8.575 22 9V19Q22 19.425 21.712 19.712Q21.425 20 21 20ZM16 17H20V10H16Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Technology
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Devices and software used by visitors.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" height="24" width="24"><path d="M12,15c-0.8,0-1.5-0.3-2.1-0.9S9,12.8,9,12s0.3-1.5,0.9-2.1S11.2,9,12,9s1.5,0.3,2.1,0.9S15,11.2,15,12s-0.3,1.5-0.9,2.1 S12.8,15,12,15z M3,9V5c0-0.5,0.2-1,0.6-1.4C4,3.2,4.5,3,5,3h4v2H5l0,0l0,0v4H3z M9,21H5c-0.5,0-1-0.2-1.4-0.6C3.2,20,3,19.6,3,19 v-4h2v4l0,0l0,0h4V21z M15,21v-2h4l0,0l0,0v-4h2v4c0,0.6-0.2,1-0.6,1.4C20,20.8,19.6,21,19,21H15z M19,9V5l0,0l0,0h-4V3h4 c0.6,0,1,0.2,1.4,0.6C20.8,4,21,4.5,21,5v4H19z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Events
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Customizable events and conversions.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 -mb-24 md:-mb-40 lg:-mb-56">
+                        <picture>
+                            <source srcset="https://lunatio.de/uploads/phpanalytics/stats-overview-dark.png" media="(prefers-color-scheme: dark)">
+
+                            <img src="https://lunatio.de/uploads/phpanalytics/stats-overview.png" class="z-0 rounded-lg md:rounded-xl shadow-2xl [image-rendering:-webkit-optimize-contrast] border border-neutral-900/5 dark:border-neutral-100/10" width="3024" height="1965" loading="lazy" alt="phpAnalytics stats overview">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-mt-24" id="payment-system">
+            <div class="bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden w-full mb-12">
+                <div class="p-8 lg:p-12 z-10 relative">
+                    <div>
+                        <h2 class="text-blue-500 dark:text-blue-400 font-semibold text-base sm:text-lg mb-2 uppercase">
+                            Payment system
+                        </h2>
+
+                        <h3 class="text-3xl sm:text-4xl mb-4 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                            Ready for business.
+                        </h3>
+
+                        <p class="text-base lg:text-lg text-neutral-500 dark:text-neutral-400 mb-12">
+                            Sell subscription based services with the <a href="https://lunatio.de/phpanalytics/#pricing" class="font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300">Extended</a> license. Integrations available with <span class="text-[#253b80] dark:text-[#395cc6] font-semibold">Pay</span><span class="text-[#179bd7] dark:text-[#179bd7] font-semibold">Pal</span>, <span class="text-[#635bff] dark:text-[#635bff] font-semibold">Stripe</span>, <span class="text-black dark:text-white font-semibold">Mollie</span>, <span class="text-[#45567c] dark:text-[#fff800] font-semibold">Paddle</span>, <span class="text-[#3395ff] dark:text-[#3395ff] font-semibold">Razorpay</span>, <span class="text-[#00c3f7] dark:text-[#00c3f7] font-semibold">Paystack</span>, <span class="text-[#0052ff] dark:text-[#0052ff] font-semibold">Coinbase</span>, <span class="text-[#0b1426] dark:text-[#fefefe] font-semibold">Crypto.com</span>, and <span class="font-semibold">Bank</span>.
+                        </p>
+                    </div>
+
+                    <div class="grid gap-8 md:gap-12 grid-cols-1 md:grid-cols-3">
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" height="24" width="24"><path d="M22 6V18Q22 18.825 21.413 19.413Q20.825 20 20 20H4Q3.175 20 2.588 19.413Q2 18.825 2 18V6Q2 5.175 2.588 4.588Q3.175 4 4 4H20Q20.825 4 21.413 4.588Q22 5.175 22 6ZM4 8H20V6Q20 6 20 6Q20 6 20 6H4Q4 6 4 6Q4 6 4 6ZM4 12V18Q4 18 4 18Q4 18 4 18H20Q20 18 20 18Q20 18 20 18V12ZM4 18Q4 18 4 18Q4 18 4 18V6Q4 6 4 6Q4 6 4 6Q4 6 4 6Q4 6 4 6V18Q4 18 4 18Q4 18 4 18Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Payments
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Accept online and offline payments.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" width="24px" height="24px"><path d="M 5.75 3 A 1.0001 1.0001 0 0 0 4.8867188 3.4960938 L 3.1367188 6.4960938 A 1.0001 1.0001 0 0 0 3 7 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 7 A 1.0001 1.0001 0 0 0 20.863281 6.4960938 L 19.113281 3.4960938 A 1.0001 1.0001 0 0 0 18.25 3 L 5.75 3 z M 6.3242188 5 L 11 5 L 11 7 L 5.1582031 7 L 6.3242188 5 z M 13 5 L 17.675781 5 L 18.841797 7 L 13 7 L 13 5 z M 5 9 L 19 9 L 19 19 L 5 19 L 5 9 z M 9 11 L 9 13 L 15 13 L 15 11 L 9 11 z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Plans
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Sell custom plans with monthly and yearly pricing.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" height="24" width="24"><path d="M4 13V15Q4 15 4 15Q4 15 4 15H20Q20 15 20 15Q20 15 20 15V13ZM4 2H20Q20.825 2 21.413 2.587Q22 3.175 22 4V15Q22 15.825 21.413 16.413Q20.825 17 20 17H16V22L12 20L8 22V17H4Q3.175 17 2.588 16.413Q2 15.825 2 15V4Q2 3.175 2.588 2.587Q3.175 2 4 2ZM4 10H20V4Q20 4 20 4Q20 4 20 4H4Q4 4 4 4Q4 4 4 4ZM4 15V4Q4 4 4 4Q4 4 4 4Q4 4 4 4Q4 4 4 4V15Q4 15 4 15Q4 15 4 15Q4 15 4 15Q4 15 4 15Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Subscriptions
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Users can subscribe to the created plans.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" height="24" width="24"><path d="M4 20Q3.175 20 2.588 19.413Q2 18.825 2 18V14Q2.825 14 3.413 13.412Q4 12.825 4 12Q4 11.175 3.413 10.587Q2.825 10 2 10V6Q2 5.175 2.588 4.588Q3.175 4 4 4H20Q20.825 4 21.413 4.588Q22 5.175 22 6V10Q21.175 10 20.587 10.587Q20 11.175 20 12Q20 12.825 20.587 13.412Q21.175 14 22 14V18Q22 18.825 21.413 19.413Q20.825 20 20 20ZM4 18H20V15.45Q19.075 14.9 18.538 13.988Q18 13.075 18 12Q18 10.925 18.538 10.012Q19.075 9.1 20 8.55V6H4V8.55Q4.925 9.1 5.463 10.012Q6 10.925 6 12Q6 13.075 5.463 13.988Q4.925 14.9 4 15.45ZM12 17Q12.425 17 12.713 16.712Q13 16.425 13 16Q13 15.575 12.713 15.287Q12.425 15 12 15Q11.575 15 11.288 15.287Q11 15.575 11 16Q11 16.425 11.288 16.712Q11.575 17 12 17ZM12 13Q12.425 13 12.713 12.712Q13 12.425 13 12Q13 11.575 12.713 11.287Q12.425 11 12 11Q11.575 11 11.288 11.287Q11 11.575 11 12Q11 12.425 11.288 12.712Q11.575 13 12 13ZM12 9Q12.425 9 12.713 8.712Q13 8.425 13 8Q13 7.575 12.713 7.287Q12.425 7 12 7Q11.575 7 11.288 7.287Q11 7.575 11 8Q11 8.425 11.288 8.712Q11.575 9 12 9ZM12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Q12 12 12 12Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Coupons
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Collect tax rates or additional fees on payments.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" height="24" width="24"><path d="M8 17H10V16H11Q11.425 16 11.713 15.712Q12 15.425 12 15V12Q12 11.575 11.713 11.287Q11.425 11 11 11H8V10H12V8H10V7H8V8H7Q6.575 8 6.287 8.287Q6 8.575 6 9V12Q6 12.425 6.287 12.712Q6.575 13 7 13H10V14H6V16H8ZM16 16.25 18 14.25H14ZM14 10H18L16 8ZM4 20Q3.175 20 2.588 19.413Q2 18.825 2 18V6Q2 5.175 2.588 4.588Q3.175 4 4 4H20Q20.825 4 21.413 4.588Q22 5.175 22 6V18Q22 18.825 21.413 19.413Q20.825 20 20 20ZM4 18Q4 18 4 18Q4 18 4 18V6Q4 6 4 6Q4 6 4 6Q4 6 4 6Q4 6 4 6V18Q4 18 4 18Q4 18 4 18ZM4 18H20Q20 18 20 18Q20 18 20 18V6Q20 6 20 6Q20 6 20 6H4Q4 6 4 6Q4 6 4 6V18Q4 18 4 18Q4 18 4 18Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Tax rates
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Offer promotional discounts or redeemable coupons.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-blue-500 dark:text-blue-400 shrink-0 mt-0.5" height="24" width="24"><path d="M3 22V2L4.5 3.5L6 2L7.5 3.5L9 2L10.5 3.5L12 2L13.5 3.5L15 2L16.5 3.5L18 2L19.5 3.5L21 2V22L19.5 20.5L18 22L16.5 20.5L15 22L13.5 20.5L12 22L10.5 20.5L9 22L7.5 20.5L6 22L4.5 20.5ZM6 17H18V15H6ZM6 13H18V11H6ZM6 9H18V7H6ZM5 19.1H19V4.9H5ZM5 4.9V19.1Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Invoices
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Invoices generated automatically on platform.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 -mb-24 md:-mb-40 lg:-mb-56">
+                        <picture>
+                            <source srcset="https://lunatio.de/uploads/phpanalytics/checkout-dark.png" media="(prefers-color-scheme: dark)">
+
+                            <img src="https://lunatio.de/uploads/phpanalytics/checkout.png" class="z-0 rounded-lg md:rounded-xl shadow-2xl [image-rendering:-webkit-optimize-contrast] border border-neutral-900/5 dark:border-neutral-100/10" width="3024" height="1965" loading="lazy" alt="phpAnalytics checkout">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-mt-24" id="features">
+            <div class="bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden w-full mb-12">
+                <div class="p-8 lg:p-12 z-10 relative">
+                    <h2 class="text-blue-500 dark:text-blue-400 font-semibold text-base sm:text-lg mb-2 uppercase">
+                        Features
+                    </h2>
+
+                    <h3 class="text-3xl sm:text-4xl mb-4 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                        We're not done yet.
+                    </h3>
+
+                    <p class="text-base lg:text-lg text-neutral-500 dark:text-neutral-400 mb-12">
+                        Here's even more features that our product comes with. These features are designed to meet the highest standards in the industry.
+                    </p>
+
+                    <div class="grid gap-8 md:gap-12 grid-cols-1 md:grid-cols-3">
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Admin panel
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Powerful admin panel to manage your website.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Multi-language
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Support for multiple languages.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    RTL support
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Support for right-to-left languages.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Responsive design
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Responsive on mobile, and desktop devices.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Retina display
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    User interface ready for high DPI screens.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Dark mode
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Turn off the lights on your website.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Authentication
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Login with <span class="font-medium text-neutral-900 dark:text-neutral-50">Google</span>, <span class="font-medium text-neutral-900 dark:text-neutral-50">Apple</span>, and <span class="font-medium text-neutral-900 dark:text-neutral-50">Microsoft</span> accounts.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Two-factor authentication
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Secure logins with email verification codes.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Privacy compliant
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Meets <span class="font-medium text-neutral-900 dark:text-neutral-50">GDPR</span>, <span class="font-medium text-neutral-900 dark:text-neutral-50">CCPA</span>, <span class="font-medium text-neutral-900 dark:text-neutral-50">PECR</span>, and <span class="font-medium text-neutral-900 dark:text-neutral-50">Cookie Law</span>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Storage
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Support for <span class="font-medium text-neutral-900 dark:text-neutral-50">DigitalOcean</span>, <span class="font-medium text-neutral-900 dark:text-neutral-50">Amazon</span>, or <span class="font-medium text-neutral-900 dark:text-neutral-50">Backblaze</span>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    API system
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Fully fledged API system for your users.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    SEO friendly
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Templates files ready for dynamic meta tags.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Self-hosted
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Run the software on your own server. See <a href="https://lunatio.de/phpuptime/documentation#requirements" class="font-medium transition hover:underline text-cyan-500 hover:text-cyan-600 dark:text-cyan-400 dark:hover:text-cyan-300">requirements</a>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Back-end
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Coded on the <span class="font-medium text-neutral-900 dark:text-neutral-50">Laravel</span> framework.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-green-600 dark:text-green-400 shrink-0 mt-0.5" height="24" width="24"><path d="M9.55 18 3.85 12.3 5.275 10.875 9.55 15.15 18.725 5.975 20.15 7.4Z"/></svg>
+
+                            <div class="flex flex-col ml-2">
+                                <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg">
+                                    Front-end
+                                </div>
+
+                                <div class="text-neutral-500 dark:text-neutral-400 mt-2">
+                                    Designed on the <span class="font-medium text-neutral-900 dark:text-neutral-50">Bootstrap</span> framework.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-mt-24" id="pricing">
+            <div class="bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden w-full">
+                <div class="p-8 lg:p-12 z-10 relative">
+                    <h2 class="text-blue-500 dark:text-blue-400 font-semibold text-base sm:text-lg mb-2 uppercase">
+                        Pricing
+                    </h2>
+
+                    <h3 class="text-3xl sm:text-4xl mb-4 font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
+                        Pay once, own forever.
+                    </h3>
+
+                    <p class="text-base lg:text-lg text-neutral-500 dark:text-neutral-400 mb-12">
+                        Our licenses are priced very simple. You pay once, and you own your license forever. You get complete source code access and free updates.
+                    </p>
+
+                    <div class="grid gap-8 md:gap-12 grid-cols-1 md:grid-cols-2">
+                        <div>
+                            <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg mb-2">
+                                Regular
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="text-4xl sm:text-5xl text-neutral-900 dark:text-neutral-50 font-extrabold">$49</div>
+                            </div>
+
+                            <div class="text-neutral-500 dark:text-neutral-400">
+                                <ul class="space-y-2">
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Use in a single website
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Source code access
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Lifetime license
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Free updates
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-red-600 dark:text-red-400 shrink-0 mr-2" height="20" width="20"><path d="M5.375 15.854 4.146 14.625 8.771 10 4.146 5.375 5.375 4.146 10 8.771 14.625 4.146 15.854 5.375 11.229 10 15.854 14.625 14.625 15.854 10 11.229Z"/></svg>
+                                        Payment system
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <a href="https://1.envato.market/phpanalytics-regular" target="_blank" rel="nofollow" class="mt-4 md:mt-8 font-medium inline-flex items-center justify-center py-2.5 px-5 rounded-full text-white dark:text-black outline-none focus:ring-4 focus:ring-blue-600/30 dark:focus:ring-blue-400/30 transition bg-blue-500 hover:bg-blue-600 dark:bg-blue-400 dark:hover:bg-blue-300 text-base">
+                                Buy now
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                            </a>
+                        </div>
+
+                        <div>
+                            <div class="text-neutral-900 dark:text-neutral-50 font-semibold text-lg mb-2">
+                                Extended
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="text-4xl sm:text-5xl text-neutral-900 dark:text-neutral-50 font-extrabold">$199</div>
+                            </div>
+
+                            <div class="text-neutral-500 dark:text-neutral-400">
+                                <ul class="space-y-2">
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Use in a single website
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Source code access
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Lifetime license
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Free updates
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current text-green-600 dark:text-green-400 shrink-0 mr-2" height="20" width="20"><path d="M7.979 15 3.208 10.229 4.479 8.958 8.021 12.5 15.542 4.979 16.771 6.208Z"/></svg>
+                                        Payment system
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <a href="https://1.envato.market/phpanalytics-extended" target="_blank" rel="nofollow" class="mt-4 md:mt-8 font-medium inline-flex items-center justify-center py-2.5 px-5 rounded-full text-white dark:text-black outline-none focus:ring-4 focus:ring-blue-600/30 dark:focus:ring-blue-400/30 transition bg-blue-500 hover:bg-blue-600 dark:bg-blue-400 dark:hover:bg-blue-300 text-base">
+                                Buy now
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 text-neutral-500 dark:text-neutral-400 text-sm">
+                        Full license terms available at: <a href="https://lunatio.de/license-terms" class="inline-flex items-center font-medium transition hover:underline text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300" target="_blank" rel="nofollow">lunatio.de/license-terms</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="w-full border-t border-neutral-900/5 dark:border-neutral-100/10">
+        <div class="max-w-screen-lg mx-auto px-4">
+            <nav class="py-12">
+                <ul class="flex lg:space-x-10 lg:flex-row flex-col lg:space-y-0 space-y-6">
+                    <li>
+                        <a href="https://lunatio.de" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Products</a>
+                    </li>
+
+                    <li>
+                        <a href="https://lunatio.de/services" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Services</a>
+                    </li>
+
+                    <li>
+                        <a class="p-2 -m-2 transition flex items-center text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white" href="https://lunatio.de/newsletter" role="button">Newsletter</a>
+                    </li>
+
+                    <li>
+                        <a href="https://lunatio.de/terms-of-service" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Terms of Service</a>
+                    </li>
+
+                    <li>
+                        <a href="https://lunatio.de/contact" class="p-2 -m-2 transition text-neutral-600 hover:text-black dark:text-neutral-400 dark:hover:text-white">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="text-neutral-500 mt-4">© 2025 Lunatio. All rights reserved.</div>
+            </nav>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
