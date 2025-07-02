@@ -14,7 +14,7 @@
     <script src="../assets/js/app.js" defer></script>
 
     <!-- Styles -->
-    <link href="https://rsms.me/inter/inter.css" rel="stylesheet preconnect">
+    <link href="http://rsms.me/inter/inter.css" rel="stylesheet preconnect">
     <link href="../assets/css/app.css" rel="stylesheet">
 </head>
 
@@ -91,14 +91,14 @@
                     </li>
 
                     <li>
-                        <a class="p-2 -m-2 transition flex items-center text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 " href="https://phprank.lunatio.de" target="_blank" rel="nofollow" role="button">
+                        <a class="p-2 -m-2 transition flex items-center text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 " href="http://phprank.lunatio.de" target="_blank" rel="nofollow" role="button">
                             Demo
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
                         </a>
                     </li>
 
                     <li>
-                        <a class="p-2 -m-2 transition flex items-center text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 " href="https://1.envato.market/phprank-regular" target="_blank" rel="nofollow" role="button">
+                        <a class="p-2 -m-2 transition flex items-center text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 " href="http://1.envato.market/phprank-regular" target="_blank" rel="nofollow" role="button">
                             Buy
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1 fill-current" height="20" width="20"><path d="M4.583 16.667 3.333 15.417 12.833 5.917H7.5V4.167H15.833V12.5H14.083V7.167Z"/></svg>
                         </a>

@@ -14,7 +14,7 @@
     <script src="assets/js/app.js" defer></script>
 
     <!-- Styles -->
-    <link href="https://rsms.me/inter/inter.css" rel="stylesheet preconnect">
+    <link href="http://rsms.me/inter/inter.css" rel="stylesheet preconnect">
     <link href="assets/css/app.css" rel="stylesheet">
 </head>
 
@@ -69,7 +69,7 @@
             <span class="text-neutral-900 dark:text-neutral-50 font-bold">Stay in the loop.</span> Subscribe to receive news about product launches, major updates, and discount campaigns delivered directly to your inbox.
         </p>
 
-        <form action="https://store.lunatio.de/email-subscribe/external" method="POST">
+        <form action="http://store.lunatio.de/email-subscribe/external" method="POST">
             <div class="grid gap-4 grid-cols-1 md:grid-cols-[1fr_auto]">
                 <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
                     <div class="col-auto">

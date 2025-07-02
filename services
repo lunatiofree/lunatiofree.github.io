@@ -14,7 +14,7 @@
     <script src="assets/js/app.js" defer></script>
 
     <!-- Styles -->
-    <link href="https://rsms.me/inter/inter.css" rel="stylesheet preconnect">
+    <link href="http://rsms.me/inter/inter.css" rel="stylesheet preconnect">
     <link href="assets/css/app.css" rel="stylesheet">
 </head>
 
@@ -74,7 +74,7 @@
                 <h5 class="text-xl font-bold text-neutral-900 dark:text-neutral-50 mb-4">Server Configuration & Software Installation<sup class="text-muted">1</sup></h5>
 
                 <ul class="list-disc mb-4 pl-6">
-                    <li class="mb-1">Creation of a new <a href="https://m.do.co/c/a2590f642b71" target="_blank" rel="nofollow" class="font-medium text-blue-600 dark:text-blue-400 hover:underline">DigitalOcean</a><sup class="text-muted">2</sup> Droplet with the specs of your choice.</li>
+                    <li class="mb-1">Creation of a new <a href="http://m.do.co/c/a2590f642b71" target="_blank" rel="nofollow" class="font-medium text-blue-600 dark:text-blue-400 hover:underline">DigitalOcean</a><sup class="text-muted">2</sup> Droplet with the specs of your choice.</li>
                     <li class="mb-1">Installation of CentOS, Apache, MySQL (MariaDB), PHP and all the other pre-requisites.</li>
                     <li class="mb-1">Free SSL certificate for your domain.</li>
                     <li class="mb-1">Uploading the required files on your server.</li>
